@@ -1,3 +1,3 @@
-# Project Title Goes Here
-
-Info about your project goes here
+# Sanity Garden
+Chris, Emma and Lola 
+Section 2
