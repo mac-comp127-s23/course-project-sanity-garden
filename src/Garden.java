@@ -4,23 +4,33 @@ import edu.macalester.graphics.*;
 public class Garden {
 
 private CanvasWindow canvas;
-//private Image worldMap;
-private World world;
+private GraphicsGroup locations;
+private Image worldMap;
+private Image strawberryPatch;
+private  GraphicsText strawberryLabel; 
+
+
 
     public Garden() {
 
-        canvas = new CanvasWindow("Sanity Garden", 700, 700);
-        //worldMap.setImagePath("res/Map of The Shimmering Sea.jpg");
+        canvas = new CanvasWindow("Sanity Garden", 700, 478);
+        Image worldMap = new Image(0, 0, "Map.jpg");
+        Image strawberryPatch = new Image(0, 0, "patch.jpg");
+        GraphicsText strawberryLabel = new GraphicsText("Strawberry Patch", 0, 0);
 
-        //world = new World();
-        //world.setWorldImage(worldMap);
-        //world.setWorldImage();
-        //canvas.add(world.getWorldImage(), 0, 0);
-        // Rectangle rect = new Rectangle(0, 0, 50, 50);
-        // world.add(rect, 0, 0);
-        // canvas.add(world, 0, 0);
-        Image image = new Image(0, 0, "Map.jpg");
-        canvas.add(image);
+        worldMap.setMaxHeight(700);
+        worldMap.setMaxWidth(700);
+
+
+        canvas.add(worldMap);
+        canvas.add(strawberryLabel, 300, 300);
+  
+        canvas.onClick(event ->{
+            canvas.remove(worldMap);
+            canvas.add(strawberryPatch, 0, 0);
+
+        }
+        );
 
     }
 
