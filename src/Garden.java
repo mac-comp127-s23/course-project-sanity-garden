@@ -21,6 +21,10 @@ private  GraphicsText strawberryLabel;
         worldMap.setMaxHeight(700);
         worldMap.setMaxWidth(700);
 
+        // locations.add(worldMap, 0, 0);
+        // locations.add(strawberryPatch, 0, 0);
+        // locations.add(strawberryLabel, 0, 0);
+
 
         canvas.add(worldMap);
         canvas.add(strawberryLabel, 300, 300);
