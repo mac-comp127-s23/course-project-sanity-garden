@@ -1,7 +1,7 @@
 
 import edu.macalester.graphics.*;
 
-public class Strawberry {
+public class Strawberry implements Location {
 
     private CanvasWindow canvas;
     private Image strawberryPatch;
