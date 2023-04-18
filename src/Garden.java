@@ -5,6 +5,7 @@ public class Garden {
 
 private CanvasWindow canvas;
 private GraphicsGroup label;
+//private GraphicsGroup strawberryLabel;
 private Image worldMap;
 private Image strawberryPatch;
 private Image market;
@@ -12,6 +13,7 @@ private Image appleOrchard;
 private GraphicsText strawberryLabel; 
 private GraphicsText marketLabel;
 private GraphicsText appleLabel;
+// private Rectangle strawberrryBox; // make sure 
 
 
     public Garden() {
