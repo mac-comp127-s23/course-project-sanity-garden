@@ -17,7 +17,7 @@ public class Market {
         sellABerry = new GraphicsGroup(0, 0);
         sellABerry.add(strawberry);
 
-        berryText = new GraphicsText("Sell a strawberry for $1.50");
+        berryText = new GraphicsText("Sell a strawberry for $1.50 here:");
         sellABerry.add(berryText);
 
         balanceDisplay = new GraphicsText("your balance: " + balance);
@@ -51,7 +51,14 @@ public class Market {
         //     balance = balance + 5;
         // }
     // }
+    private void run() {
+        canvas.draw();
+    }
 
+    public static void main(String[] args) {
+        Market market = new Market();
+        market.run();
+    }
     
 }
 
