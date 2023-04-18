@@ -4,9 +4,10 @@ public class Market {
 
     private CanvasWindow canvas;
     private int berryInventory;
-    private int berrySeedCount;// are we interested in keeping count of seeds?? 
+    // private int berrySeedCount;// are we interested in keeping count of seeds?? 
    // private int appleInventory; 
     private double balance;
+    private GraphicsText balanceDisplay; 
     private Image strawberry;
     private GraphicsGroup sellABerry;
     private GraphicsText berryText;
@@ -18,6 +19,8 @@ public class Market {
 
         berryText = new GraphicsText("Sell a strawberry for $1.50");
         sellABerry.add(berryText);
+
+        balanceDisplay = new GraphicsText("your balance: " + balance);
 
         Image market = new Image(0,0, "Market.png");
         Image strawberry = new Image(300,350, "strawberryBud.jpeg"); // strawberry bud is a placeholder for now  
