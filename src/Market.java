@@ -24,7 +24,7 @@ public class Market {
 
         Image market = new Image(0,0, "Market.png");
         Image strawberry = new Image(300,350, "strawberryBud.jpeg"); // strawberry bud is a placeholder for now  
-        this.berryInventory = Strawberry.strawberryCount; // whatever we end up making the count for strawberry to be?? so two separate instances? 
+        this.berryInventory = StrawberryPatch.strawberryCount; // whatever we end up making the count for strawberry to be?? so two separate instances? 
        // this.appleInventory = appleOrchard.appleCount;
         
     }

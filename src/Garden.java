@@ -13,7 +13,7 @@ private Image appleOrchard;
 private GraphicsText strawberryLabel; 
 private GraphicsText marketLabel;
 private GraphicsText appleLabel;
-// private Rectangle strawberrryBox; // make sure 
+// private Rectangle strawberrryBox; // 
 
 
     public Garden() {

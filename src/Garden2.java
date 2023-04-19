@@ -9,7 +9,7 @@ private CanvasWindow canvas;
 private GraphicsGroup label;
 private HashMap<GraphicsText, Location> locationMap;
 private GraphicsText strawberryLabel; 
-private Strawberry straw;
+private StrawberryPatch straw;
 
 
     public Garden2() {
