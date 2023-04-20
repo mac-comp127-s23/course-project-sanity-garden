@@ -1,3 +1,3 @@
-public class Patch implements Location {
+public class Patch extends Location {
     
 }

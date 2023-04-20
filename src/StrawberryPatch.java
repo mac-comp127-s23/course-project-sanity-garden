@@ -1,61 +1,61 @@
 
+import org.w3c.dom.ElementTraversal;
+
 import edu.macalester.graphics.*;
 
-public class StrawberryPatch implements Location {
+public class StrawberryPatch extends Location {
 
-    private CanvasWindow canvas;
-    private Image strawberryPatch;
     private Image strawberryBud;
     private GraphicsGroup allDirtLabels;
     private GraphicsText dirtLabelLeft;
     private GraphicsText dirtLabelRight;
 
 
-    public StrawberryPatch() {
+    public StrawberryPatch(CanvasWindow canvas) {
 
-        allDirtLabels = new GraphicsGroup(0, 0);
-        allDirtLabels.add(dirtLabelLeft, 0, 0);
-        allDirtLabels.add(dirtLabelRight, 100, 100);
+        elements = new GraphicsGroup(0, 0);
+        dirtLabelLeft = new GraphicsText("Dirt Left", 0, 0);
+        dirtLabelRight = new GraphicsText("Dirt Right", 100, 100);
+        elements.add(dirtLabelLeft, 0, 0);
+        elements.add(dirtLabelRight, 100, 100);
 
-        Image strawberryPatch = new Image(0, 0, "patch.jpg");
-        Image strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
+        background = new Image(0, 0, "patch.jpg");
+        strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
+
+        drawLocation();
+        plantStrawberry(canvas);
+
 
         // CHANGE GARDEN SO THAT WHEN YOU CLICK ON STRAWBERRY LABEL IT REMOVES LABEL
         // AND TAKES YOU TO createStrawberryPatch METHOD
 
     }
 
-    public void createStrawberryPatch(CanvasWindow canvas) {
-        canvas.add(strawberryPatch, 0, 0);
-        plantStrawberry();
-
-    }
-
-    private void plantStrawberry() {
+    private void plantStrawberry(CanvasWindow canvas) {
         // when you click on the dirt patch it plants a seed
 
         canvas.onClick(event -> {
-            if (allDirtLabels.getElementAt(event.getPosition()) == dirtLabelLeft) {
-                canvas.add(StrawberryPatch.strawberry, 0, 0);
+            if (elements.getElementAt(event.getPosition()) == dirtLabelLeft) {
+                canvas.add(strawberryBud, 0, 0);
             }
-            if (allDirtLabels.getElementAt(event.getPosition()) == dirtLabelRight) {
-                canvas.add(StrawberryPatch., 100, 100);
+            if (elements.getElementAt(event.getPosition()) == dirtLabelRight) {
+                canvas.add(strawberryBud, 100, 100);
             }
         });
 
     }
 
 
-    private void run() {
-        canvas.draw();
-    }
+    // private void run() {
+    //     canvas.draw();
+    // }
 
-    public static void main(String[] args) {
+    // public static void main(String[] args) {
 
-        StrawberryPatch strawberry = new StrawberryPatch();
-        strawberry.run();
+    //     StrawberryPatch strawberry = new StrawberryPatch(canvas);
+    //     strawberry.run();
 
 
-    }
+    // }
 
 }

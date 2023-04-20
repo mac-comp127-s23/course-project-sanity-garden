@@ -17,7 +17,7 @@ private StrawberryPatch straw;
         World world = new World();
         locationMap = new HashMap<GraphicsText,Location>();
         strawberryLabel = new GraphicsText("Strawberry Patch", 0, 0); // Could each Location have a label within the class?
-        //straw = new Strawberry(); // This causes an error
+        straw = new StrawberryPatch(canvas); // This causes an error
 
         label = new GraphicsGroup(0, 0);
         label.add(strawberryLabel, 100, 100);
@@ -34,8 +34,8 @@ private StrawberryPatch straw;
             for (GraphicsText l : locationMap.keySet())
                 if (l.getElementAt(event.getPosition().getX(), event.getPosition().getY()) == l){
                     canvas.removeAll();
-                    //locationMap.get(l) // Put a createPatch method in location?
-                    //straw.createStrawberryPatch(canvas);
+                    canvas.add(locationMap.get(l));
+                    
                 }
         }
         );
