@@ -1,37 +1,41 @@
 import edu.macalester.graphics.*;
 
-public class Market {
+public class Market extends Location {
 
-    private CanvasWindow canvas;
     private int berryInventory;
     // private int berrySeedCount;// are we interested in keeping count of seeds?? 
    // private int appleInventory; 
     private double balance;
     private GraphicsText balanceDisplay; 
     private Image strawberry;
-    private GraphicsGroup sellABerry;
     private GraphicsText berryText;
 
-    public Market(){
+    public Market(CanvasWindow canvas) {
+
+        balance = 0;
         
-        sellABerry = new GraphicsGroup(0, 0);
-        sellABerry.add(strawberry);
-
+        elements = new GraphicsGroup(0, 0);
+        strawberry = new Image(300,350, "strawberryBud.jpeg"); // strawberry bud is a placeholder for now 
         berryText = new GraphicsText("Sell a strawberry for $1.50 here:");
-        sellABerry.add(berryText);
-
         balanceDisplay = new GraphicsText("your balance: " + balance);
+        elements.add(balanceDisplay);
+        elements.add(strawberry);
+        elements.add(berryText);
 
-        Image market = new Image(0,0, "Market.png");
-        Image strawberry = new Image(300,350, "strawberryBud.jpeg"); // strawberry bud is a placeholder for now  
-        this.berryInventory = StrawberryPatch.strawberryCount; // whatever we end up making the count for strawberry to be?? so two separate instances? 
+        background = new Image(0,0, "Market.png"); 
+        //this.berryInventory = StrawberryPatch.strawberryCount; // whatever we end up making the count for strawberry to be?? so two separate instances? 
        // this.appleInventory = appleOrchard.appleCount;
+
+       drawLocation();
+       sellFruit(canvas);
+
+
         
     }
 
-    private void sellFruit(){
+    private void sellFruit(CanvasWindow canvas){
         canvas.onClick(event -> {
-            if (sellABerry.getElementAt(event.getPosition()) == strawberry){
+            if (elements.getElementAt(event.getPosition()) == strawberry){
                 balance = balance + 1.5;
                 berryInventory--;
             }
@@ -51,14 +55,14 @@ public class Market {
         //     balance = balance + 5;
         // }
     // }
-    private void run() {
-        canvas.draw();
-    }
+    // private void run() {
+    //     canvas.draw();
+    // }
 
-    public static void main(String[] args) {
-        Market market = new Market();
-        market.run();
-    }
+    // public static void main(String[] args) {
+    //     Market market = new Market();
+    //     market.run();
+    // }
     
 }
 
