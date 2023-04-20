@@ -11,7 +11,7 @@ public class Market extends Location {
     private GraphicsText berryText;
 
     public Market(CanvasWindow canvas) {
-
+        super("Market", 100, 200);
         balance = 0;
         
         elements = new GraphicsGroup(0, 0);

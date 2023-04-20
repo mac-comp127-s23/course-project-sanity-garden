@@ -13,6 +13,8 @@ public class StrawberryPatch extends Location {
 
     public StrawberryPatch(CanvasWindow canvas) {
 
+        super("Strawberry Patch", 300, 100);
+
         elements = new GraphicsGroup(0, 0);
         dirtLabelLeft = new GraphicsText("Dirt Left", 0, 0);
         dirtLabelRight = new GraphicsText("Dirt Right", 100, 100);
