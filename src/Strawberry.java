@@ -1,3 +1,3 @@
-public class Strawberry {
+public class Strawberry implements Item {
     
 }

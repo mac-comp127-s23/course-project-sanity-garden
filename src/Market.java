@@ -13,11 +13,12 @@ public class Market extends Location {
     public Market(CanvasWindow canvas) {
         super("Market", 100, 200);
         balance = 0;
+        berryInventory = 20;
         
         elements = new GraphicsGroup(0, 0);
         strawberry = new Image(300,350, "strawberryBud.jpeg"); // strawberry bud is a placeholder for now 
-        berryText = new GraphicsText("Sell a strawberry for $1.50 here:");
-        balanceDisplay = new GraphicsText("your balance: " + balance);
+        berryText = new GraphicsText("Sell a strawberry for $1.50 here:", 500, 200);
+        balanceDisplay = new GraphicsText("your balance: " + balance, 500, 100);
         elements.add(balanceDisplay);
         elements.add(strawberry);
         elements.add(berryText);
@@ -27,17 +28,17 @@ public class Market extends Location {
        // this.appleInventory = appleOrchard.appleCount;
 
        drawLocation();
-       sellFruit(canvas);
-
-
-        
+       sell(canvas);
     }
 
-    private void sellFruit(CanvasWindow canvas){
+    private void sell(CanvasWindow canvas){
         canvas.onClick(event -> {
             if (elements.getElementAt(event.getPosition()) == strawberry){
                 balance = balance + 1.5;
                 berryInventory--;
+                elements.remove(balanceDisplay);
+                balanceDisplay = new GraphicsText("your balance: " + balance, 500, 100);
+                elements.add(balanceDisplay);
             }
         });
         
@@ -55,15 +56,6 @@ public class Market extends Location {
         //     balance = balance + 5;
         // }
     // }
-    // private void run() {
-    //     canvas.draw();
-    // }
 
-    // public static void main(String[] args) {
-    //     Market market = new Market();
-    //     market.run();
-    // }
-    
 }
 
-// buy and sell things, keep track of money 
