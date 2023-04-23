@@ -7,7 +7,7 @@ public class World extends GraphicsGroup {
 
     public World() {
         background = new Image(0, 0, "background.png");
-        elements = new Image(0, 0, "testMushroom.png");
+        elements = new Image(0, 0, "elements.png");
         add(background);
         add(elements);
     }
