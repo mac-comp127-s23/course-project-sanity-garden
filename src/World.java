@@ -2,15 +2,18 @@ import edu.macalester.graphics.*;
 
 public class World extends GraphicsGroup {
 
-    private Image worldMap;
+    private Image background;
+    private Image elements;
 
     public World() {
-        worldMap = new Image(0, 0, "Map.png");
-        add(worldMap);
+        background = new Image(0, 0, "background.png");
+        elements = new Image(0, 0, "testMushroom.png");
+        add(background);
+        add(elements);
     }
 
-    public Image getWorldImage() {
-        return worldMap;
+    public GraphicsGroup getWorldImage() {
+        return this;
     }
 
 }
