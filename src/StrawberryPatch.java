@@ -9,6 +9,7 @@ public class StrawberryPatch extends Location {
     private GraphicsGroup allDirtLabels;
     private GraphicsText dirtLabelLeft;
     private GraphicsText dirtLabelRight;
+    private Strawberry strawberry;
 
 
     public StrawberryPatch(CanvasWindow canvas) {
@@ -23,7 +24,7 @@ public class StrawberryPatch extends Location {
 
         background = new Image(0, 0, "patch.jpg");
         strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
-        Strawberry strawberry = new  Strawberry(new Image("strawberry.png"));
+        strawberry = new  Strawberry(new Image("strawberry.png"));
         elements.add(strawberry.getPlant()); //added this, now onclick method doesn't work for straw bud image >_<
 
         drawLocation();
@@ -40,10 +41,10 @@ public class StrawberryPatch extends Location {
 
         canvas.onClick(event -> {
             if (elements.getElementAt(event.getPosition()) == dirtLabelLeft) {
-                canvas.add(strawberryBud, 0, 0);
+                canvas.add(strawberry.getPlant());
             }
             if (elements.getElementAt(event.getPosition()) == dirtLabelRight) {
-                canvas.add(strawberryBud, 100, 100);
+                canvas.add(strawberry.getPlant(), 100, 100);
             }
         });
 
