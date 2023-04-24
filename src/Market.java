@@ -9,6 +9,7 @@ public class Market extends Location {
     private GraphicsText balanceDisplay; 
     private Image strawberry;
     private GraphicsText berryText;
+    
 
     public Market(CanvasWindow canvas) {
         super("Market", 100, 200);

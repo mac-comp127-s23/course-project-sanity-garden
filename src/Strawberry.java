@@ -1,12 +1,24 @@
+import java.util.ArrayList;
+
 import edu.macalester.graphics.Image;
 
-public class Strawberry {
+public class Strawberry extends Plant{
 public int howMany = 0;
 public Image strawberryBud;
 
     public Strawberry(Image strawberryBud) {
 
-        strawberryBud = new Image(0, 0, "strawberryBud.jpg");
+        super();
+
+
+        price = 3;
+        numberStages = 2;
+        plantImages = new ArrayList<>(numberStages);
+
+        plantImages.add(new Image("strawberryBud.jpeg"));
+        plantImages.add(new Image("strawberry.png"));
+        plantImages.add(new Image("testMushroom.png"));
+        
  
     }
 

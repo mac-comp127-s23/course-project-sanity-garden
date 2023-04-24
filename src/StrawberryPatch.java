@@ -23,6 +23,8 @@ public class StrawberryPatch extends Location {
 
         background = new Image(0, 0, "patch.jpg");
         strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
+        Strawberry strawberry = new  Strawberry(new Image("strawberry.png"));
+        elements.add(strawberry.getPlant()); //added this, now onclick method doesn't work for straw bud image >_<
 
         drawLocation();
         plantStrawberry(canvas);

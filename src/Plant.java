@@ -1,19 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.macalester.graphics.Image;
 
 public abstract class Plant {
     public int howMany = 0;
-    public Image plantBud;
+    public Image currentPlantImage = new Image("strawberry.png");
+    protected int growthStage = 0; 
+    protected int numberStages = 0;
+    protected int price;
+    protected int currentStage = 0; 
+    protected List<Image> plantImages;
 
 
-    public Plant(Image plantBud, String jpeg) {
+    public Plant() {
 
-        plantBud = new Image(0, 0, jpeg);
- 
+       
     }
 
     public Image getPlant() {
-        return this.plantBud;
+        return currentPlantImage;
     }
+
+    public void grow(){
+        if (currentStage <= numberStages){
+            growthStage++;
+            updatePlantImage();
+        } else {
+            harvest();
+        }
+    }
+
+    public void harvest(){
+        howMany++;
+    }
+
+    public void updatePlantImage(){
+        currentPlantImage = plantImages.get(growthStage);
+    }
+
+    
 
 }
 
