@@ -21,10 +21,6 @@ public Image strawberryBud;
         
  
     }
-
-    public Image getStrawberry() {
-        return this.strawberryBud;
-    }
 }
 
 
