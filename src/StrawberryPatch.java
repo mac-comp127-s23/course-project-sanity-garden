@@ -16,14 +16,14 @@ public class StrawberryPatch extends Location {
 
         super("Strawberry Patch", 300, 100);
 
-        elements = new GraphicsGroup(0, 0);
+        elements = new GraphicsGroup(400, 400); //this is where we position the dirt labels together
         dirtLabelLeft = new GraphicsText("Dirt Left");
-        dirtLabelRight = new GraphicsText("Dirt Right");
+        dirtLabelRight = new GraphicsText("Dirt Right", 200, 200); // this is how far waway dirt right is from dirt left
         elements.add(dirtLabelLeft);
-        elements.add(dirtLabelRight,100, 100);
+        elements.add(dirtLabelRight);
 
-        background = new Image(0, 0, "patch.jpg");
-        strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
+        background = new Image("patch.jpg");
+        strawberryBud = new Image("strawberryBud.jpeg");
         strawberry = new  Strawberry(new Image("strawberry.png"));
         elements.add(strawberry.getPlant()); //added this, now onclick method doesn't work for straw bud image >_<
 
