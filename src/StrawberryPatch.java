@@ -14,11 +14,11 @@ public class StrawberryPatch extends Location {
 
     public StrawberryPatch(CanvasWindow canvas) {
 
-        super("Strawberry Patch", 300, 100);
+        super("Strawberry Patch", 150, 400); // this is where we place the strawberry patch label on the main screen
 
-        elements = new GraphicsGroup(400, 400); //this is where we position the dirt labels together
-        dirtLabelLeft = new GraphicsText("Dirt Left");
-        dirtLabelRight = new GraphicsText("Dirt Right", 200, 200); // this is how far waway dirt right is from dirt left
+        elements = new GraphicsGroup(200, 200); //this is where we position the dirt labels together
+        dirtLabelLeft = new GraphicsText("Click to Plant a Strawberry");
+        dirtLabelRight = new GraphicsText("Click to PLant a Strawberry", 400, 200); // this is how far waway dirt right is from dirt left
         elements.add(dirtLabelLeft);
         elements.add(dirtLabelRight);
 
