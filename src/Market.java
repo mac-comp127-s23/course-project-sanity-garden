@@ -9,6 +9,7 @@ public class Market extends Location {
     private GraphicsText balanceDisplay;
     private Image strawberry;
     private GraphicsText berryText;
+    private GraphicsText appleText;
 
     /**
      * Creates a market where you can sell your fruit for a profit and buy
@@ -20,11 +21,12 @@ public class Market extends Location {
         balance = 0;
         berryInventory = 20;
         elements = new GraphicsGroup(0, 0);
-        strawberry = new Image(300, 350, "strawberryBud.jpeg"); // strawberry bud is a placeholder for now
-        berryText = new GraphicsText("Sell a strawberry for $1.50 here:", 500, 200);
-        balanceDisplay = new GraphicsText("your balance: " + balance, 500, 100);
+        // strawberry = new Image(300, 350, "strawberryBud.jpeg"); 
+        berryText = new GraphicsText("sell a strawberry for $1.50", 450, 150);
+        appleText = new GraphicsText("sell an apple for $2.00", 525, 200);
+        balanceDisplay = new GraphicsText("$", 740, 505); 
         elements.add(balanceDisplay);
-        elements.add(strawberry);
+        // elements.add(strawberry);
         elements.add(berryText);
         background = new Image(0, 0, "market.png");
         drawLocation();
@@ -42,7 +44,7 @@ public class Market extends Location {
                 balance = balance + 1.5;
                 berryInventory--;
                 elements.remove(balanceDisplay);
-                balanceDisplay = new GraphicsText("your balance: " + balance, 500, 100);
+                balanceDisplay = new GraphicsText("$" + balance, 740, 505);
                 elements.add(balanceDisplay);
             }
         });
