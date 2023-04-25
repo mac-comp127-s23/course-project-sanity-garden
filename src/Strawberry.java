@@ -12,7 +12,7 @@ public Image strawberryBud;
 
 
         price = 3;
-        numberStages = 2;
+        numberStages = 3;
         plantImages = new ArrayList<>(numberStages);
 
         plantImages.add(new Image("testMushroom.png"));

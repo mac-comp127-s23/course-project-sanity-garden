@@ -29,7 +29,7 @@ public class StrawberryPatch extends Location {
         background = new Image(0, 0, "strawberrypatch.png");
         strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
         strawberry = new  Strawberry(new Image("strawberry.png"));
-        elements.add(strawberry.getPlant()); //added this, now onclick method doesn't work for straw bud image >_<
+        //elements.add(strawberry.getPlant()); //added this, now onclick method doesn't work for straw bud image >_<
 
         drawLocation();
         plantStrawberry(canvas);
@@ -44,13 +44,14 @@ public class StrawberryPatch extends Location {
         canvas.onClick(event -> {
 
             if (elements.getElementAt(event.getPosition()) == dirtLabelLeft) {
-                strawberry.grow();
+                strawberry.updatePlantImage();
                 canvas.add(strawberry.getPlant());
+                strawberry.grow();
             }
             if (elements.getElementAt(event.getPosition()) == dirtLabelRight) {
-                strawberry.grow();
-
+                strawberry.updatePlantImage();
                 canvas.add(strawberry.getPlant());
+                strawberry.grow();
             }
         });
 

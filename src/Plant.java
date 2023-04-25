@@ -5,7 +5,7 @@ import edu.macalester.graphics.Image;
 
 public abstract class Plant {
     public int howMany = 0;
-    public Image currentPlantImage = new Image("strawberry.png");
+    public Image currentPlantImage;
     protected int growthStage = 0; 
     protected int numberStages = 0;
     protected int price;
@@ -23,7 +23,7 @@ public abstract class Plant {
     }
 
     public void grow(){
-        if (currentStage <= numberStages){
+        if (currentStage < numberStages-1){
             growthStage++;
             updatePlantImage();
         } else {
