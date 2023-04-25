@@ -1,4 +1,6 @@
 
+import java.awt.Color;
+
 import org.w3c.dom.ElementTraversal;
 
 import edu.macalester.graphics.*;
@@ -16,9 +18,11 @@ public class StrawberryPatch extends Location {
 
         super("Strawberry Patch", 150, 400); // this is where we place the strawberry patch label on the main screen
 
-        elements = new GraphicsGroup(200, 200); //this is where we position the dirt labels together
+        elements = new GraphicsGroup(125, 300); //this is where we position the dirt labels together
         dirtLabelLeft = new GraphicsText("Click to Plant a Strawberry");
-        dirtLabelRight = new GraphicsText("Click to PLant a Strawberry", 400, 200); // this is how far waway dirt right is from dirt left
+        dirtLabelLeft.setFillColor(Color.WHITE);
+        dirtLabelRight = new GraphicsText("Click to Plant a Strawberry", 450, 0); // this is how far waway dirt right is from dirt left
+        dirtLabelRight.setFillColor(Color.WHITE);
         elements.add(dirtLabelLeft);
         elements.add(dirtLabelRight);
 
