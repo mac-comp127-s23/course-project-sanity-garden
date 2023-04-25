@@ -12,7 +12,7 @@ public class Market extends Location {
     
 
     public Market(CanvasWindow canvas) {
-        super("Market", 100, 200);
+        super("Market", 750, 540); // this is where we place the market label on the main screen
         balance = 0;
         berryInventory = 20;
         
