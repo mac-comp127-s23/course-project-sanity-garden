@@ -22,7 +22,7 @@ public class StrawberryPatch extends Location {
         elements.add(dirtLabelLeft);
         elements.add(dirtLabelRight,100, 100);
 
-        background = new Image(0, 0, "patch.jpg");
+        background = new Image(0, 0, "realstrawberrypatch.jpg");
         strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
         strawberry = new  Strawberry(new Image("strawberry.png"));
         elements.add(strawberry.getPlant()); //added this, now onclick method doesn't work for straw bud image >_<
