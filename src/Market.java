@@ -24,7 +24,7 @@ public class Market extends Location {
         elements.add(strawberry);
         elements.add(berryText);
 
-        background = new Image(0,0, "testMushroom.png"); 
+        background = new Image(0,0, "market.png"); 
         //this.berryInventory = StrawberryPatch.strawberryCount; // whatever we end up making the count for strawberry to be?? so two separate instances? 
        // this.appleInventory = appleOrchard.appleCount;
 
