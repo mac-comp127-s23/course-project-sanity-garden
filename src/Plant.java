@@ -27,6 +27,7 @@ public abstract class Plant {
             growthStage++;
             updatePlantImage();
         } else {
+            currentStage = 0;
             harvest();
         }
     }
