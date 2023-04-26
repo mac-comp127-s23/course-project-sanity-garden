@@ -27,7 +27,7 @@ public class Market extends Location {
         // strawberry = new Image(300, 350, "strawberryBud.jpeg"); 
         berryText = new GraphicsText("sell a strawberry for $1.50", 450, 150);
         appleText = new GraphicsText("sell an apple for $2.00", 450, 50);
-        // berryText.setFont(null, Font.SERIF, 1);
+      //  berryText.setFontStyle(Font SERIF);
         balanceDisplay = new GraphicsText("$" + balance, 740, 505); 
         berryDisplay = new GraphicsText(" " + berryInventory, 740, 530);
         elements.add(balanceDisplay);
@@ -46,7 +46,7 @@ public class Market extends Location {
 
     private void sell(CanvasWindow canvas) {
         canvas.onClick(event -> {
-            if (elements.getElementAt(event.getPosition()) == strawberry) {
+            if (elements.getElementAt(event.getPosition()) == berryText) {
                 balance = balance + 1.5;
                 berryInventory--;
                 berryDisplay.setText(" " + berryInventory);

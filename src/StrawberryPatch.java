@@ -13,7 +13,6 @@ public class StrawberryPatch extends Location {
     private GraphicsText dirtLabelRight;
     private Strawberry strawberry;
 
-
     public StrawberryPatch(CanvasWindow canvas) {
 
         super("Strawberry Patch", 150, 400); // this is where we place the strawberry patch label on the main screen
