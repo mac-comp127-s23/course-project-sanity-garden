@@ -46,12 +46,14 @@ public class Market extends Location {
             if (elements.getElementAt(event.getPosition()) == strawberry) {
                 balance = balance + 1.5;
                 berryInventory--;
-                elements.remove(balanceDisplay);
-                elements.remove(berryDisplay);
-                berryDisplay = new GraphicsText(" " + berryInventory, 740, 525);
-                balanceDisplay = new GraphicsText("$" + balance, 740, 505);
-                elements.add(berryDisplay);
-                elements.add(balanceDisplay);
+                berryDisplay.setText(" " + berryInventory);
+                balanceDisplay.setText("$" + balance);
+                // elements.remove(balanceDisplay);
+                // elements.remove(berryDisplay);
+                // berryDisplay = new GraphicsText(" " + berryInventory, 740, 525);
+                // balanceDisplay = new GraphicsText("$" + balance, 740, 505);
+                // elements.add(berryDisplay);
+                // elements.add(balanceDisplay);
             }
         });
 
