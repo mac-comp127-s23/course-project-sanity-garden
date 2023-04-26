@@ -29,18 +29,13 @@ public class StrawberryPatch extends Location {
         background = new Image(0, 0, "realstrawberrypatch.png");
         strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
         strawberry = new  Strawberry(new Image("strawberry.png"));
-        //elements.add(strawberry.getPlant()); //added this, now onclick method doesn't work for straw bud image >_<
 
         drawLocation();
         plantStrawberry(canvas);
-
-
     }
 
     private void plantStrawberry(CanvasWindow canvas) {
         // when you click on the dirt patch it plants a seed
-
-        
         canvas.onClick(event -> {
 
             if (elements.getElementAt(event.getPosition()) == dirtLabelLeft) {
