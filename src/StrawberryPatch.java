@@ -21,7 +21,7 @@ public class StrawberryPatch extends Location {
         elements = new GraphicsGroup(125, 300); //this is where we position the dirt labels together
         dirtLabelLeft = new GraphicsText("Click to Plant a Strawberry");
         dirtLabelLeft.setFillColor(Color.WHITE);
-        dirtLabelRight = new GraphicsText("Click to Plant a Strawberry", 450, 0); // this is how far waway dirt right is from dirt left
+        dirtLabelRight = new GraphicsText("Click to Plant a Strawberry", 450, 0); // this is how far away dirt right is from dirt left
         dirtLabelRight.setFillColor(Color.WHITE);
         elements.add(dirtLabelLeft);
         elements.add(dirtLabelRight);
