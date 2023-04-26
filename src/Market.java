@@ -26,7 +26,7 @@ public class Market extends Location {
         berryText = new GraphicsText("sell a strawberry for $1.50", 450, 150);
         appleText = new GraphicsText("sell an apple for $2.00", 450, 50);
         balanceDisplay = new GraphicsText("$" + balance, 740, 505); 
-        berryDisplay = new GraphicsText(" " + berryInventory, 740, 520);
+        berryDisplay = new GraphicsText(" " + berryInventory, 740, 530);
         elements.add(balanceDisplay);
         elements.add(berryDisplay);
         // elements.add(strawberry);
@@ -62,7 +62,11 @@ public class Market extends Location {
         // }
     }
 
-    
+    // public void run(CanvasWindow canvas){
+    //     balance = 0;
+    //     berryInventory = 20;
+    //     sell(canvas);
+    // }
 
 
     // private void buySeeds(){
