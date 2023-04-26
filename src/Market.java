@@ -1,3 +1,5 @@
+import java.awt.Font;
+
 import edu.macalester.graphics.*;
 
 public class Market extends Location {
@@ -20,11 +22,12 @@ public class Market extends Location {
     public Market(CanvasWindow canvas) {
         super("Market", 750, 540); // this is where we place the market label on the main screen
         balance = 0;
-        berryInventory = 20; //test
+        berryInventory = 20; //placeholder for Strawberry.howMany
         elements = new GraphicsGroup(0, 0);
         // strawberry = new Image(300, 350, "strawberryBud.jpeg"); 
         berryText = new GraphicsText("sell a strawberry for $1.50", 450, 150);
         appleText = new GraphicsText("sell an apple for $2.00", 450, 50);
+        // berryText.setFont(null, Font.SERIF, 1);
         balanceDisplay = new GraphicsText("$" + balance, 740, 505); 
         berryDisplay = new GraphicsText(" " + berryInventory, 740, 530);
         elements.add(balanceDisplay);
