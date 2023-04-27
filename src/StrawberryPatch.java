@@ -15,7 +15,6 @@ public class StrawberryPatch extends Location {
     private Rectangle dirtRightBox;
     private Strawberry strawberry;
 
-
     public StrawberryPatch(CanvasWindow canvas) {
 
         super("Strawberry Patch", 150, 400); // this is where we place the strawberry patch label on the main screen
@@ -42,7 +41,6 @@ public class StrawberryPatch extends Location {
         elements.add(dirtRightBox);
         elements.add(dirtLabelLeft);
         elements.add(dirtLabelRight);
-
 
         background = new Image(0, 0, "strawberrypatch.png");
         strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
