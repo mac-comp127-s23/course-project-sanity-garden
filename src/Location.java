@@ -17,7 +17,7 @@ abstract class Location extends GraphicsGroup {
         label = new GraphicsGroup();
         labelText = new GraphicsText(title, x, y);
         labelBox = new Rectangle(x, y - labelText.getHeight(), labelText.getWidth(), labelText.getHeight());
-        labelBox.setFillColor(new Color(255, 255, 255, 100));
+        labelBox.setFillColor(new Color(255, 255, 255, 0));
         labelBox.setStroked(false);
         label.add(labelBox);
         label.add(labelText);
