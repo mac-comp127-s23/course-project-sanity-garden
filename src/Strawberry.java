@@ -23,7 +23,7 @@ public Image strawberryBud;
     }
 
     public void next(){
-        if (plantImages.indexOf(getPlant()) <= 3){
+        if (plantImages.indexOf(getPlant()) < 3){
             updatePlantImage();
         } else if (plantImages.indexOf(getPlant()) > 3) {
             currentPlantImage = new Image("strawberry.png");
