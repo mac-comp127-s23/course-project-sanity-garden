@@ -6,9 +6,11 @@ public class Garden {
 
     private CanvasWindow canvas;
     private GraphicsGroup label;
+    private List<GraphicsObject> exitButton; // May change GraphicsObject to "Label" class?
     private List<Location> locations;
     private StrawberryPatch straw;
     private Market market;
+    private World world;
 
     /**
      * Authors: Chris Lohmeier, Emma Nguyen and Lola Vescovo Comp 127 Final Project
@@ -20,17 +22,24 @@ public class Garden {
 
     public Garden() {
         canvas = new CanvasWindow("Sanity Garden", 900, 600); // Standard screen height for now
-        World world = new World();
-        locations = new ArrayList<Location>();
+        world = new World();
+
         straw = new StrawberryPatch(canvas);
         market = new Market(canvas);
+        locations = new ArrayList<Location>();
+        locations.add(market);
+        locations.add(straw);
+
         label = new GraphicsGroup();
         label.add(straw.getLabel());
         label.add(market.getLabel());
+
+        drawWorld();
+    }
+
+    private void drawWorld() {
         canvas.add(world.getWorldImage());
         canvas.add(label);
-        locations.add(market);
-        locations.add(straw);
     }
 
     /**

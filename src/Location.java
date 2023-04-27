@@ -7,6 +7,7 @@ abstract class Location extends GraphicsGroup {
     protected Rectangle labelBox;
     protected Image background;
     protected GraphicsGroup elements;
+    protected CanvasWindow canvasWindow;
 
     /**
      * Creates an overall location class with an image and various labels
@@ -35,4 +36,9 @@ abstract class Location extends GraphicsGroup {
     public Rectangle getLabelBox() {
         return labelBox;
     }
+
+    // public boolean exit() {
+    // Unimplemented: for loop that checks if the "exitButton" has been clicked, and returns true if that is the case
+    // }
+
 }

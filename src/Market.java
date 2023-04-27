@@ -21,6 +21,7 @@ public class Market extends Location {
 
     public Market(CanvasWindow canvas) {
         super("Market", 750, 540); // this is where we place the market label on the main screen
+        canvasWindow = canvas;
         balance = 0;
         berryInventory = 20; //placeholder for Strawberry.howMany
         elements = new GraphicsGroup(0, 0);
