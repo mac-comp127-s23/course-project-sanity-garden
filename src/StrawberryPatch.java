@@ -18,7 +18,6 @@ public class StrawberryPatch extends Location {
     public StrawberryPatch(CanvasWindow canvas) {
 
         super("Strawberry Patch", 150, 400); // this is where we place the strawberry patch label on the main screen
-        canvasWindow = canvas;
         elements = new GraphicsGroup(125, 300); //this is where we position the dirt labels together
     
         

@@ -1,13 +1,10 @@
-import java.awt.Color;
 import edu.macalester.graphics.*;
 abstract class Location extends GraphicsGroup {
 
-    protected GraphicsGroup label;
-    protected GraphicsText labelText;
-    protected Rectangle labelBox;
+    protected Label label;
+    protected Label exitButton;
     protected Image background;
     protected GraphicsGroup elements;
-    protected CanvasWindow canvasWindow;
 
     /**
      * Creates an overall location class with an image and various labels
@@ -15,30 +12,26 @@ abstract class Location extends GraphicsGroup {
      */
 
     public Location(String title, double x, double y) {
-        label = new GraphicsGroup();
-        labelText = new GraphicsText(title, x, y);
-        labelBox = new Rectangle(x, y - labelText.getHeight(), labelText.getWidth(), labelText.getHeight());
-        labelBox.setFillColor(new Color(255, 255, 255, 0));
-        labelBox.setStroked(false);
-        label.add(labelBox);
-        label.add(labelText);
+        label = new Label(title, x, y);
+        exitButton = new Label("Exit", 50, 50);
     }
 
     public void drawLocation() {
         add(background);
         add(elements);
+        add(exitButton);
     }
 
-    public GraphicsGroup getLabel() {
+    public Rectangle getExitBox() {
+        return exitButton.getLabelBox();
+    }
+
+    public Label getLabel() {
         return label;
     }
-    
-    public Rectangle getLabelBox() {
-        return labelBox;
-    }
 
-    // public boolean exit() {
-    // Unimplemented: for loop that checks if the "exitButton" has been clicked, and returns true if that is the case
-    // }
+    public Rectangle getLabelBox() {
+        return label.getLabelBox();
+    }
 
 }

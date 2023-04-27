@@ -5,8 +5,7 @@ import edu.macalester.graphics.*;
 public class Garden {
 
     private CanvasWindow canvas;
-    private GraphicsGroup label;
-    private List<GraphicsObject> exitButton; // May change GraphicsObject to "Label" class?
+    private GraphicsGroup labels;
     private List<Location> locations;
     private StrawberryPatch straw;
     private Market market;
@@ -30,16 +29,16 @@ public class Garden {
         locations.add(market);
         locations.add(straw);
 
-        label = new GraphicsGroup();
-        label.add(straw.getLabel());
-        label.add(market.getLabel());
+        labels = new GraphicsGroup();
+        labels.add(straw.getLabel());
+        labels.add(market.getLabel());
 
         drawWorld();
     }
 
     private void drawWorld() {
         canvas.add(world.getWorldImage());
-        canvas.add(label);
+        canvas.add(labels);
     }
 
     /**
@@ -54,10 +53,22 @@ public class Garden {
                     event.getPosition().getY()) == location.getLabelBox()) {
                     canvas.removeAll();
                     canvas.add(location);
+                    checkExit(location);
                 }
             }
         });
     }
+
+    private void checkExit(Location location) {
+        canvas.onClick(event -> {
+            if (location.getExitBox().getElementAt(event.getPosition().getX(),
+                event.getPosition().getY()) == location.getExitBox()) {
+                canvas.removeAll();
+                drawWorld();
+            }
+        });
+    }
+
     public static void main(String[] args) {
         Garden garden = new Garden();
         garden.run();
