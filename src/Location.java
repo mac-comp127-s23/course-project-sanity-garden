@@ -13,7 +13,7 @@ abstract class Location extends GraphicsGroup {
 
     public Location(String title, double x, double y) {
         label = new Label(title, x, y);
-        exitButton = new Label("Exit", 50, 50);
+        exitButton = new Label("Go Back", 50, 50);
     }
 
     public void drawLocation() {
