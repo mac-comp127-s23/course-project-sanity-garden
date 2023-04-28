@@ -15,7 +15,7 @@ public class Market extends Location {
     private GraphicsText  berryDisplay;
 
     /**
-     * Creates a market where you can sell your fruit for a profit and buy
+     * Creates a market from location where you can sell your fruit for a profit and buy
      * items to help you grow (if we have time to implement that part)
      */
 

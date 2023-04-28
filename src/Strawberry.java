@@ -5,6 +5,10 @@ import edu.macalester.graphics.Image;
 public class Strawberry extends Plant{
 public int howMany = 0;
 public Image strawberryBud;
+   
+    /**
+     * Extends the plant class specifically to a strawberry
+     */
 
     public Strawberry(Image strawberryBud) {
 
@@ -21,6 +25,9 @@ public Image strawberryBud;
         
  
     }
+       /**
+     * idk what ''next'' does yet--Emma I think this is you?
+     */
 
     public void next(){
         if (plantImages.indexOf(getPlant()) < 3){

@@ -14,6 +14,10 @@ public class StrawberryPatch extends Location {
     private Label newDirtLabelLeft;
     private Label newDirtLabelRight;
 
+    /**
+     * Creates a strawberry patch from location where you can click to plant and grow strawberries
+     * and then harvest them.
+     */
 
     public StrawberryPatch(CanvasWindow canvas) {
 
@@ -34,8 +38,11 @@ public class StrawberryPatch extends Location {
         plantStrawberry(canvas);
     }
 
+     /**
+     * Plants a seed when you click on the dirt patch
+     */
+
     private void plantStrawberry(CanvasWindow canvas) {
-        // when you click on the dirt patch it plants a seed
         canvas.onClick(event -> {
 
             if (elements.getElementAt(event.getPosition()) == dirtLeftBox) {
