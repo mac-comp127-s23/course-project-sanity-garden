@@ -38,7 +38,7 @@ public abstract class Plant {
         }
     }
        /**
-     * Adds a strawberry to your inventory ecah time you harvest it.
+     * Adds a strawberry to your inventory each time you harvest it.
      */
 
     public void harvest() {
@@ -48,7 +48,5 @@ public abstract class Plant {
     public void updatePlantImage() {
         currentPlantImage = plantImages.get(growthStage);
     }
-
-
 }
 

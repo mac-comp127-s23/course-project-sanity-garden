@@ -46,12 +46,12 @@ public class StrawberryPatch extends Location {
         canvas.onClick(event -> {
 
             if (elements.getElementAt(event.getPosition()) == dirtLeftBox) {
-                strawberry.next();
+                strawberry.updatePlantImage();
                 canvas.add(strawberry.getPlant());
                 strawberry.grow();
             }
             if (elements.getElementAt(event.getPosition()) == dirtRightBox) {
-                strawberry.next();
+                strawberry.updatePlantImage();
                 canvas.add(strawberry.getPlant());
                 strawberry.grow();
             }

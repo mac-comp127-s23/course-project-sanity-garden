@@ -25,17 +25,7 @@ public Image strawberryBud;
         
  
     }
-       /**
-     * idk what ''next'' does yet--Emma I think this is you?
-     */
-
-    public void next(){
-        if (plantImages.indexOf(getPlant()) < 3){
-            updatePlantImage();
-        } else if (plantImages.indexOf(getPlant()) > 3) {
-            currentPlantImage = new Image("strawberry.png");
-        }
-    }
+       
 }
 
 
