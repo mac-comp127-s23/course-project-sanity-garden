@@ -4,7 +4,7 @@ abstract class Location extends GraphicsGroup {
     protected Label label;
     protected Label exitButton;
     protected Image background;
-    protected GraphicsGroup elements;
+    protected GraphicsGroup elements; // Not needed, can directly call add() in child classes
 
     /**
      * Creates an overall location class with an image and various labels
