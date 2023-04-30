@@ -8,6 +8,7 @@ public class Garden {
     private GraphicsGroup labels;
     private List<Location> locations;
     private StrawberryPatch straw;
+    private AppleOrchard apple;
     private Market market;
     private World world;
 
@@ -24,6 +25,7 @@ public class Garden {
         world = new World();
 
         straw = new StrawberryPatch(canvas);
+        apple = new AppleOrchard(canvas);
         market = new Market(canvas);
         locations = new ArrayList<Location>();
         locations.add(market);
@@ -32,6 +34,7 @@ public class Garden {
         labels = new GraphicsGroup();
         labels.add(straw.getLabel());
         labels.add(market.getLabel());
+        labels.add(apple.getLabel());
 
         drawWorld();
     }

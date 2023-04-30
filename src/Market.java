@@ -1,6 +1,7 @@
 import java.awt.Font;
 
 import edu.macalester.graphics.*;
+import edu.macalester.graphics.ui.Button;
 
 public class Market extends Location {
 
@@ -10,7 +11,7 @@ public class Market extends Location {
     private double balance;
     private GraphicsText balanceDisplay;
     private Image strawberry;
-    private GraphicsText berryText;
+    private Button berryButton;
     private GraphicsText appleText;
     private GraphicsText  berryDisplay;
 
@@ -24,16 +25,18 @@ public class Market extends Location {
         balance = 0;
         berryInventory = 20; //placeholder for Strawberry.howMany
         elements = new GraphicsGroup(0, 0);
-        // strawberry = new Image(300, 350, "strawberryBud.jpeg"); 
-        berryText = new GraphicsText("sell a strawberry for $1.50", 450, 150);
-        appleText = new GraphicsText("sell an apple for $2.00", 450, 50);
-      //  berryText.setFontStyle(Font SERIF);
         balanceDisplay = new GraphicsText("$" + balance, 740, 505); 
+        // strawberry = new Image(300, 350, "strawberryBud.jpeg"); 
+        berryButton = new Button("click to sell strawberry for $1.50");
+        berryButton.setPosition(425, 125);
         berryDisplay = new GraphicsText(" " + berryInventory, 740, 530);
         elements.add(balanceDisplay);
         elements.add(berryDisplay);
-        // elements.add(strawberry);
-        elements.add(berryText);
+
+        appleText = new GraphicsText("sell an apple for $2.00", 450, 50);
+       
+    
+        elements.add(berryButton);
         background = new Image(0, 0, "market.png");
         drawLocation();
         sell(canvas);
@@ -45,31 +48,32 @@ public class Market extends Location {
      */
 
     private void sell(CanvasWindow canvas) {
-        canvas.onClick(event -> {
-            if (elements.getElementAt(event.getPosition()) == berryText) {
-                balance = balance + 1.5;
-                berryInventory--;
-                berryDisplay.setText(" " + berryInventory);
-                balanceDisplay.setText("$" + balance);
-                // elements.remove(balanceDisplay);
-                // elements.remove(berryDisplay);
-                // berryDisplay = new GraphicsText(" " + berryInventory, 740, 525);
-                // balanceDisplay = new GraphicsText("$" + balance, 740, 505);
-                // elements.add(berryDisplay);
-                // elements.add(balanceDisplay);
-            }
+        berryButton.onClick(() -> {
+                updateBerryDisplay();
         });
-
         // if (appleInventory){
         // balance = balance + 5;
         // }
     }
+/**
+ * keeps count of berry inventory display, makes sure that if the button is clicked beyond the number of berries, the 
+ * balance and inventory don't change
+ */
+    private void updateBerryDisplay(){
+        if (berryInventory > 0){
+            berryInventory--;
+            balance = balance + 1.5;
+            berryDisplay.setText(" " + berryInventory);
+            balanceDisplay.setText("$" + balance);
+        }
+        if (berryInventory <= 0){
+            berryInventory = 0;
+            berryDisplay.setText("0");
+            balanceDisplay.setText("" + balance);
+        }
+    }
 
-    // public void run(CanvasWindow canvas){
-    //     balance = 0;
-    //     berryInventory = 20;
-    //     sell(canvas);
-    // }
+
 
 
     // private void buySeeds(){
