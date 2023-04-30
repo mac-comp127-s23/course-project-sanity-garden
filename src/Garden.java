@@ -17,7 +17,7 @@ public class Garden {
      */
 
     /**
-     * Creates a garden where you can click on locations and plant and sell various foods
+     * Creates a garden where you can click on locations and plant and sell various foods.
      */
 
     public Garden() {
@@ -30,6 +30,7 @@ public class Garden {
         locations = new ArrayList<Location>();
         locations.add(market);
         locations.add(straw);
+        locations.add(apple);
 
         labels = new GraphicsGroup();
         labels.add(straw.getLabel());
