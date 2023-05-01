@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import Items.AppleItem;
-import Items.Item;
-import Items.StrawberryItem;
 import edu.macalester.graphics.*;
 import edu.macalester.graphics.ui.Button;
 
@@ -12,8 +9,8 @@ public class Market extends Location {
 
     private double balance;
     private GraphicsText balanceDisplay;
-    private StrawberryItem strawberries;
-    private AppleItem apples;
+    private Item strawberries;
+    private Item apples;
     private List<Item> itemTypes;
     private HashMap<Item, Button> itemButtons;
     private HashMap<Item, GraphicsText> itemDisplays;
@@ -29,12 +26,10 @@ public class Market extends Location {
         itemDisplays = new HashMap<>();
         itemButtons = new HashMap<>();
 
-        strawberries = new StrawberryItem();
-        strawberries.setItemCount(20);
+        strawberries = new Item("Strawbery", 1.5, 20);
         itemTypes.add(strawberries);
 
-        apples = new AppleItem();
-        apples.setItemCount(15);
+        apples = new Item("Apple", 2, 15);
         itemTypes.add(apples);
 
         balance = 0;
