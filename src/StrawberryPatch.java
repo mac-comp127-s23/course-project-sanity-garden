@@ -43,7 +43,6 @@ public class StrawberryPatch extends Location {
                 strawberryLeft.updatePlantImage();
                 canvas.add(strawberryLeft.getPlant());
                 strawberryLeft.grow();
-                System.out.print(newDirtLabelLeft.getLabelBox());
             }
 
         });

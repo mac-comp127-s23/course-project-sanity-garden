@@ -2,7 +2,9 @@ import Plants.Apple;
 import edu.macalester.graphics.*;
 
 public class AppleOrchard extends Location {
-    private Apple apple;
+    private Apple appleLeft;
+    private Apple appleMiddle;
+    private Apple appleRight;
     private Label leftAppleTree;
     private Label middleAppleTree;
     private Label rightAppleTree;
@@ -17,7 +19,9 @@ public class AppleOrchard extends Location {
 
         
             background = new Image(0, 0, "appleorchard.png");
-            apple = new Apple(new Image("apple.png"));
+            appleLeft = new Apple(new Image("apple.png"));
+            appleMiddle = new Apple(new Image("apple.png"));
+            appleRight = new Apple(new Image("apple.png"));
     
             drawLocation();
             add(leftAppleTree);
@@ -29,25 +33,35 @@ public class AppleOrchard extends Location {
 
 
     private void plantApple(CanvasWindow canvas) {
-        canvas.onClick(event -> {
+        canvas.onClick(eventLeft -> {
+            if (getElementAt(eventLeft.getPosition()) == leftAppleTree.getLabelBox()) {
+                appleLeft.updatePlantImage();
+                canvas.add(appleLeft.getPlant());
+                appleLeft.grow();
+            }
 
-            if (getElementAt(event.getPosition()) == leftAppleTree.getLabelBox()) {
-                apple.updatePlantImage();
-                canvas.add(apple.getPlant());
-                apple.grow();
-            }
-            if (getElementAt(event.getPosition()) == middleAppleTree.getLabelBox()) {
-                apple.updatePlantImage();
-                canvas.add(apple.getPlant());
-                apple.grow();
-            }
-            if (getElementAt(event.getPosition()) == rightAppleTree.getLabelBox()) {
-                apple.updatePlantImage();
-                canvas.add(apple.getPlant());
-                apple.grow();
-            }
+        });
+            canvas.onClick(eventRight -> {
+                if (getElementAt(eventRight.getPosition()) == middleAppleTree.getLabelBox()) {
+                    appleMiddle.updatePlantImage();
+                    canvas.add(appleMiddle.getPlant());
+                    appleMiddle.grow();
+                }
         });
 
-    }
-    
+        canvas.onClick(eventRight -> {
+            if (getElementAt(eventRight.getPosition()) == rightAppleTree.getLabelBox()) {
+                appleRight.updatePlantImage();
+                canvas.add(appleRight.getPlant());
+                appleRight.grow();
+            }
+    });
+
 }
+
+    }
+
+    
+
+
+    
