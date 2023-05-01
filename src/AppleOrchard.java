@@ -9,7 +9,7 @@ public class AppleOrchard extends Location {
 
     public AppleOrchard(CanvasWindow canvas) {
 
-        super("Apple Orchard", 200, 50); // this is where we place the strawberry patch label on the main screen
+        super("Apple Orchard", 640, 340); // this is where we place the apple orchard label on the main screen
         
             // leftAppleTree = new Label("Grow an apple!", 125, 300); 
             // middleAppleTree = new Label("Grow an apple!", 450, 300); 
