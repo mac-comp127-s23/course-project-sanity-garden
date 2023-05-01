@@ -1,3 +1,4 @@
+package Plants;
 import java.util.ArrayList;
 
 import edu.macalester.graphics.Image;
@@ -14,7 +15,6 @@ public Image strawberryBud;
 
         super();
 
-        price = 3;
         numberStages = 3;
         plantImages = new ArrayList<>(numberStages);
 

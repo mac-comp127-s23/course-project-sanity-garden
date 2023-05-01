@@ -1,7 +1,24 @@
 package Items;
-public interface Item {
+public abstract class Item {
 
-    public int getItemCount();
-    public void setItemCount(int newAmount);
+    protected int itemCount;
+    protected String title;
+    public double price;
+
+    public int getItemCount() {
+        return itemCount;
+    }
+
+    public void setItemCount(int newAmount) {
+        itemCount = newAmount;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 
 }

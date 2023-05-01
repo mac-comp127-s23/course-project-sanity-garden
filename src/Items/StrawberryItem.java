@@ -1,15 +1,8 @@
 package Items;
-public class StrawberryItem implements Item {
+public class StrawberryItem extends Item {
     
-    private int itemCount;
-
-    @Override
-    public int getItemCount() {
-        return itemCount;
-    }
-
-    @Override
-    public void setItemCount(int newAmount) {
-        itemCount = newAmount;
+    public StrawberryItem() {
+        price = 1.50;
+        title = "Strawberry";
     }
 }
