@@ -11,20 +11,43 @@ public class AppleOrchard extends Location {
 
         super("Apple Orchard", 640, 340); // this is where we place the apple orchard label on the main screen
         
-            // leftAppleTree = new Label("Grow an apple!", 125, 300); 
-            // middleAppleTree = new Label("Grow an apple!", 450, 300); 
-            // rightAppleTree = new Label("Grow an apple!", 575, 300);
+            leftAppleTree = new Label("Grow an apple!", 85, 195); 
+            middleAppleTree = new Label("Grow an apple!", 420, 330); 
+            rightAppleTree = new Label("Grow an apple!", 690, 220);
 
-            // add(leftAppleTree);
-            // add(middleAppleTree);
-            
+        
             background = new Image(0, 0, "appleorchard.png");
-           //  appleBud = new Image(0, 0, "strawberryBud.jpeg");
-           //  flower = new Strawberry(new Image("strawberry.png"));
-            // apple = new Image("sprout.png");
-
+            apple = new Apple(new Image("strawberry.png"));
+    
             drawLocation();
-        // plantStrawberry(canvas);
+            add(leftAppleTree);
+            add(middleAppleTree);
+            add(rightAppleTree);
+    
+            plantApple(canvas);
+    }
+
+
+    private void plantApple(CanvasWindow canvas) {
+        canvas.onClick(event -> {
+
+            if (getElementAt(event.getPosition()) == leftAppleTree.getLabelBox()) {
+                apple.updatePlantImage();
+                canvas.add(apple.getPlant());
+                apple.grow();
+            }
+            if (getElementAt(event.getPosition()) == middleAppleTree.getLabelBox()) {
+                apple.updatePlantImage();
+                canvas.add(apple.getPlant());
+                apple.grow();
+            }
+            if (getElementAt(event.getPosition()) == rightAppleTree.getLabelBox()) {
+                apple.updatePlantImage();
+                canvas.add(apple.getPlant());
+                apple.grow();
+            }
+        });
+
     }
     
 }
