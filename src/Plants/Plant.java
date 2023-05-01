@@ -37,6 +37,7 @@ public abstract class Plant {
             harvest();
         }
     }
+    
        /**
      * Adds a strawberry to your inventory each time you harvest it.
      */

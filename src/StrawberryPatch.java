@@ -1,16 +1,9 @@
 
-import java.awt.Color;
-
-import org.w3c.dom.ElementTraversal;
-
 import Plants.Strawberry;
 import edu.macalester.graphics.*;
 
 public class StrawberryPatch extends Location {
 
-    private Image strawberryBud;
-    private Rectangle dirtLeftBox;
-    private Rectangle dirtRightBox;
     private Strawberry strawberry;
     private Label newDirtLabelLeft;
     private Label newDirtLabelRight;
@@ -27,14 +20,14 @@ public class StrawberryPatch extends Location {
         newDirtLabelLeft = new Label("Click to Plant a Strawberry", 125, 300); //this is where we place dirtLeft
         newDirtLabelRight = new Label("Click to Plant a Strawberry", 575, 300); //this is where we place dirtRight
 
-        add(newDirtLabelLeft);
-        add(newDirtLabelRight);
         
         background = new Image(0, 0, "strawberrypatch.png");
-        strawberryBud = new Image(0, 0, "strawberryBud.jpeg");
         strawberry = new  Strawberry(new Image("strawberry.png"));
 
         drawLocation();
+        add(newDirtLabelLeft);
+        add(newDirtLabelRight);
+
         plantStrawberry(canvas);
     }
 

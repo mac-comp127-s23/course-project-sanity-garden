@@ -19,7 +19,7 @@ public Image strawberryBud;
         plantImages = new ArrayList<>(numberStages);
 
         plantImages.add(new Image("testMushroom.png"));
-        plantImages.add(new Image("strawberryBud.jpeg"));
+        plantImages.add(new Image("sprout.png"));
         plantImages.add(new Image("strawberry.png"));
         
  

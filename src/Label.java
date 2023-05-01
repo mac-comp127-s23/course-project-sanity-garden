@@ -12,7 +12,7 @@ public class Label extends GraphicsGroup {
         super(x, y);
         GraphicsText labelText = new GraphicsText(title);
         labelBox = new Rectangle(x, y - labelText.getHeight(), labelText.getWidth(), labelText.getHeight());
-        labelBox.setFillColor(new Color(255, 255, 255,255));
+        labelBox.setFillColor(new Color(255, 255, 255, 255));
         labelBox.setStroked(false);
         add(labelBox);
         add(labelText);

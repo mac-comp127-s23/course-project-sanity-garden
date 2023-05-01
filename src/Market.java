@@ -1,4 +1,3 @@
-import java.awt.Font;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -52,9 +51,7 @@ public class Market extends Location {
             itemDisplays.put(item, display);
             
         }
-
         add(balanceDisplay);
-
         sell(canvas);
     }
 
