@@ -14,7 +14,6 @@ public Image strawberryBud;
 
         super();
 
-
         price = 3;
         numberStages = 3;
         plantImages = new ArrayList<>(numberStages);

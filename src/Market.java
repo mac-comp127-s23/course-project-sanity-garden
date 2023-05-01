@@ -1,5 +1,9 @@
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.List;
 
+import Items.Item;
+import Items.StrawberryItem;
 import edu.macalester.graphics.*;
 import edu.macalester.graphics.ui.Button;
 
@@ -14,6 +18,8 @@ public class Market extends Location {
     private Button berryButton;
     private GraphicsText appleText;
     private GraphicsText  berryDisplay;
+    private StrawberryItem strawberries;
+    private List<Item> itemTypes;
 
     /**
      * Creates a market from location where you can sell your fruit for a profit and buy
@@ -22,14 +28,17 @@ public class Market extends Location {
 
     public Market(CanvasWindow canvas) {
         super("Market", 750, 540); // this is where we place the market label on the main screen
+        itemTypes = new ArrayList<>();
+        strawberries = new StrawberryItem();
+        strawberries.setItemCount(20);
+        itemTypes.add(strawberries);
         balance = 0;
-        berryInventory = 20; //placeholder for Strawberry.howMany
         elements = new GraphicsGroup(0, 0);
         balanceDisplay = new GraphicsText("$" + balance, 740, 505); 
         // strawberry = new Image(300, 350, "strawberryBud.jpeg"); 
         berryButton = new Button("click to sell strawberry for $1.50");
         berryButton.setPosition(425, 125);
-        berryDisplay = new GraphicsText(" " + berryInventory, 740, 530);
+        berryDisplay = new GraphicsText(" " + strawberries.getItemCount(), 740, 530);
         elements.add(balanceDisplay);
         elements.add(berryDisplay);
 
@@ -48,9 +57,11 @@ public class Market extends Location {
      */
 
     private void sell(CanvasWindow canvas) {
-        berryButton.onClick(() -> {
-                updateBerryDisplay();
-        });
+        for (Item item : itemTypes) { 
+            berryButton.onClick(() -> {
+                    updateBerryDisplay(item);
+            });
+        }
         // if (appleInventory){
         // balance = balance + 5;
         // }
@@ -59,15 +70,16 @@ public class Market extends Location {
  * keeps count of berry inventory display, makes sure that if the button is clicked beyond the number of berries, the 
  * balance and inventory don't change
  */
-    private void updateBerryDisplay(){
-        if (berryInventory > 0){
-            berryInventory--;
+    private void updateBerryDisplay(Item item){
+        int itemCount = item.getItemCount();
+        if (itemCount > 0){
+            item.setItemCount(itemCount = itemCount - 1);
             balance = balance + 1.5;
-            berryDisplay.setText(" " + berryInventory);
+            berryDisplay.setText(" " + itemCount);
             balanceDisplay.setText("$" + balance);
         }
-        if (berryInventory <= 0){
-            berryInventory = 0;
+        if (itemCount <= 0){
+            item.setItemCount(0);
             berryDisplay.setText("0");
             balanceDisplay.setText("" + balance);
         }

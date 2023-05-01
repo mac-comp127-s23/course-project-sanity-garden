@@ -48,5 +48,13 @@ public abstract class Plant {
     public void updatePlantImage() {
         currentPlantImage = plantImages.get(growthStage);
     }
+
+    public int getHowMany() {
+        return howMany;
+    }
+
+    public void setHowMany(int newAmount) {
+        howMany = newAmount;
+    }
 }
 
