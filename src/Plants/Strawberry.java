@@ -18,9 +18,20 @@ public Image strawberryBud;
         numberStages = 3;
         plantImages = new ArrayList<>(numberStages);
 
-        plantImages.add(new Image("testMushroom.png"));
-        plantImages.add(new Image("sprout.png"));
-        plantImages.add(new Image("strawberry.png"));
+        Image strawberry = new Image("strawberry.png");
+
+        Image seed = new Image("strawseed.png");
+        seed.setMaxWidth(seed.getImageWidth() * 0.08);
+        seed.setMaxHeight(seed.getImageHeight() * 0.08);
+
+        Image sprout = new Image("realsprout.png");
+        sprout.setMaxWidth(sprout.getImageWidth() * 0.1);
+        sprout.setMaxHeight(sprout.getImageHeight() * 0.1);
+
+
+        plantImages.add(seed);
+        plantImages.add(sprout);
+        plantImages.add(strawberry);
         
  
     }
