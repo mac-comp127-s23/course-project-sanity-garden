@@ -5,6 +5,7 @@ import edu.macalester.graphics.Image;
 
 public abstract class Plant {
     public int howMany = 0;
+    // Add an itemType for each Plant, intialize howMany to itemType
     public Image currentPlantImage;
     protected int growthStage = 0;
     protected int numberStages = 0;
