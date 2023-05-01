@@ -17,10 +17,22 @@ public class Apple extends Plant{
 
         numberStages = 3;
         plantImages = new ArrayList<>(numberStages);
+        
+        Image flower = new Image("pixelAppleflower.png");
+        flower.setMaxHeight(flower.getImageHeight() * 0.07);
+        flower.setMaxWidth(flower.getImageWidth() * 0.07);
 
-        plantImages.add(new Image("appleflower.png"));
-        plantImages.add(new Image("tinyapple.png"));
-        plantImages.add(new Image("fullgrownapple.png"));
+        Image tinyApple = new Image("tinyapple.png");
+        tinyApple.setMaxWidth(flower.getImageWidth() * 0.2);
+        tinyApple.setMaxHeight(flower.getImageHeight() * 0.2);
+
+        Image apple = new Image("fullgrownapple.png");
+        apple.setMaxWidth(apple.getImageWidth() * 0.03);
+        apple.setMaxHeight(apple.getImageHeight() * 0.03);
+
+        plantImages.add(flower);
+        plantImages.add(tinyApple);
+        plantImages.add(apple);
         
  
     }
