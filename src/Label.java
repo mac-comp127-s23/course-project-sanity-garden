@@ -11,8 +11,8 @@ public class Label extends GraphicsGroup {
     public Label(String title, double x, double y) {
         super(x, y);
         GraphicsText labelText = new GraphicsText(title);
-        labelBox = new Rectangle(x, y - labelText.getHeight(), labelText.getWidth(), labelText.getHeight());
-        labelBox.setFillColor(new Color(255, 255, 255, 255));
+        labelBox = new Rectangle(0, -labelText.getHeight(), labelText.getWidth(), labelText.getHeight());
+        labelBox.setFillColor(new Color(255, 255, 255, 0));
         labelBox.setStroked(false);
         add(labelBox);
         add(labelText);

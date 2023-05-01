@@ -53,11 +53,12 @@ public class Garden {
         canvas.draw();
         canvas.onClick(event -> {
             for (Location location : locations) {
-                if (location.getLabelBox().getElementAt(event.getPosition().getX(),
+                if (canvas.getElementAt(event.getPosition().getX(),
                     event.getPosition().getY()) == location.getLabelBox()) {
                     canvas.removeAll();
                     canvas.add(location);
                     checkExit(location);
+                    System.out.println(location.getLabelBox());
                 }
             }
         });
@@ -65,7 +66,7 @@ public class Garden {
 
     private void checkExit(Location location) {
         canvas.onClick(event -> {
-            if (location.getExitBox().getElementAt(event.getPosition().getX(),
+            if (canvas.getElementAt(event.getPosition().getX(),
                 event.getPosition().getY()) == location.getExitBox()) {
                 canvas.removeAll();
                 drawWorld();

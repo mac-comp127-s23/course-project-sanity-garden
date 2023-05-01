@@ -37,11 +37,11 @@ public class StrawberryPatch extends Location {
 
     private void plantStrawberry(CanvasWindow canvas) {
         canvas.onClick(event -> {
-
             if (getElementAt(event.getPosition()) == newDirtLabelLeft.getLabelBox()) {
                 strawberry.updatePlantImage();
                 canvas.add(strawberry.getPlant());
                 strawberry.grow();
+                System.out.print(newDirtLabelLeft.getLabelBox());
             }
             if (getElementAt(event.getPosition()) == newDirtLabelRight.getLabelBox()) {
                 strawberry.updatePlantImage();
