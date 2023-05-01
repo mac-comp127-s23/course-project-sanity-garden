@@ -4,7 +4,8 @@ import edu.macalester.graphics.*;
 
 public class StrawberryPatch extends Location {
 
-    private Strawberry strawberry;
+    private Strawberry strawberryLeft;
+    private Strawberry strawberryRight;
     private Label newDirtLabelLeft;
     private Label newDirtLabelRight;
 
@@ -22,7 +23,8 @@ public class StrawberryPatch extends Location {
 
         
         background = new Image(0, 0, "strawberrypatch.png");
-        strawberry = new  Strawberry(new Image("strawberry.png"));
+        strawberryLeft = new Strawberry(new Image("strawberry.png"));
+        strawberryRight = new Strawberry(new Image("strawberry.png"));
 
         drawLocation();
         add(newDirtLabelLeft);
@@ -36,18 +38,21 @@ public class StrawberryPatch extends Location {
      */
 
     private void plantStrawberry(CanvasWindow canvas) {
-        canvas.onClick(event -> {
-            if (getElementAt(event.getPosition()) == newDirtLabelLeft.getLabelBox()) {
-                strawberry.updatePlantImage();
-                canvas.add(strawberry.getPlant());
-                strawberry.grow();
+        canvas.onClick(eventLeft -> {
+            if (getElementAt(eventLeft.getPosition()) == newDirtLabelLeft.getLabelBox()) {
+                strawberryLeft.updatePlantImage();
+                canvas.add(strawberryLeft.getPlant());
+                strawberryLeft.grow();
                 System.out.print(newDirtLabelLeft.getLabelBox());
             }
-            if (getElementAt(event.getPosition()) == newDirtLabelRight.getLabelBox()) {
-                strawberry.updatePlantImage();
-                canvas.add(strawberry.getPlant());
-                strawberry.grow();
-            }
+
+        });
+            canvas.onClick(eventRight -> {
+                if (getElementAt(eventRight.getPosition()) == newDirtLabelRight.getLabelBox()) {
+                    strawberryRight.updatePlantImage();
+                    canvas.add(strawberryRight.getPlant());
+                    strawberryRight.grow();
+                }
         });
 
     }
