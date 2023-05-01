@@ -1,9 +1,15 @@
-package Items;
-public abstract class Item {
 
-    protected int itemCount;
-    protected String title;
-    public double price;
+public class Item {
+
+    private int itemCount;
+    private String title;
+    private double price;
+
+    public Item(String title, double price, int itemCount) {
+        this.price = price;
+        this.title = title;
+        this.itemCount = itemCount;
+    }
 
     public int getItemCount() {
         return itemCount;
