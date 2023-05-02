@@ -18,15 +18,18 @@ public Image strawberryBud;
         numberStages = 3;
         plantImages = new ArrayList<>(numberStages);
 
-        Image strawberry = new Image("strawberry.png");
 
         Image seed = new Image("strawseed.png");
         seed.setMaxWidth(seed.getImageWidth() * 0.08);
         seed.setMaxHeight(seed.getImageHeight() * 0.08);
 
         Image sprout = new Image("realsprout.png");
-        sprout.setMaxWidth(sprout.getImageWidth() * 0.1);
-        sprout.setMaxHeight(sprout.getImageHeight() * 0.1);
+        sprout.setMaxWidth(sprout.getImageWidth() * 0.001);
+        sprout.setMaxHeight(sprout.getImageHeight() * 0.001);
+
+        Image strawberry = new Image("strawberry.png");
+        sprout.setMaxWidth(sprout.getImageWidth() * 0.5);
+        sprout.setMaxHeight(sprout.getImageHeight() * 0.5);
 
 
         plantImages.add(seed);
