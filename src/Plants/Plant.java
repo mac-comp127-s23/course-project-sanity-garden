@@ -19,7 +19,7 @@ public abstract class Plant {
 
     public Plant() {
 
-    updatePlantImage();
+        currentPlantImage = new Image("testMushroom.png");
 
     }
 
