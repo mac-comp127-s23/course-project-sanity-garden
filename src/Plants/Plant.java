@@ -55,7 +55,7 @@ public abstract class Plant {
 
     public void updatePlantImage() {
         currentPlantImage = plantImages.get(growthStage);
-        currentPlantImage.setPosition(xCoor, yCoor);
+        currentPlantImage.setCenter(xCoor, yCoor);
     }
 
     public int getHowMany() {

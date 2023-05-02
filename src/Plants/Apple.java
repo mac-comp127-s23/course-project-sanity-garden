@@ -23,12 +23,12 @@ public class Apple extends Plant{
         flower.setMaxWidth(flower.getImageWidth() * 0.045);
 
         Image tinyApple = new Image("tinyapple.png");
-        tinyApple.setMaxWidth(flower.getImageWidth() * 0.2);
-        tinyApple.setMaxHeight(flower.getImageHeight() * 0.2);
+        tinyApple.setMaxWidth(flower.getImageWidth() * 0.3);
+        tinyApple.setMaxHeight(flower.getImageHeight() * 0.3);
 
         Image apple = new Image("fullgrownapple.png");
-        apple.setMaxWidth(apple.getImageWidth() * 0.03);
-        apple.setMaxHeight(apple.getImageHeight() * 0.03);
+        apple.setMaxWidth(apple.getImageWidth() * 0.055);
+        apple.setMaxHeight(apple.getImageHeight() * 0.055);
 
         plantImages.add(flower);
         plantImages.add(tinyApple);
