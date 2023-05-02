@@ -11,6 +11,9 @@ public class Garden {
     private AppleOrchard apple;
     private Market market;
     private World world;
+    private Item strawberries;
+    private Item apples;
+    private List<Item> itemList;
 
     /**
      * Authors: Chris Lohmeier, Emma Nguyen and Lola Vescovo Comp 127 Final Project
@@ -24,9 +27,17 @@ public class Garden {
         canvas = new CanvasWindow("Sanity Garden", 900, 600); // Standard screen height for now
         world = new World();
 
+        itemList = new ArrayList<>();
+
+        strawberries = new Item("Strawberry", 1.5, 20);
+        itemList.add(strawberries);
+
+        apples = new Item("Apple", 2, 15);
+        itemList.add(apples);
+
         straw = new StrawberryPatch(canvas);
         apple = new AppleOrchard(canvas);
-        market = new Market(canvas);
+        market = new Market(canvas, itemList);
         locations = new ArrayList<Location>();
         locations.add(market);
         locations.add(straw);

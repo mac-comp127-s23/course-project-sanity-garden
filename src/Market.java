@@ -9,28 +9,21 @@ public class Market extends Location {
 
     private double balance;
     private GraphicsText balanceDisplay;
-    private Item strawberries;
-    private Item apples;
-    private List<Item> itemTypes;
     private HashMap<Item, Button> itemButtons;
     private HashMap<Item, GraphicsText> itemDisplays;
+    private List<Item> itemTypes;
 
     /**
      * Creates a market from location where you can sell your fruit for a profit and buy
      * items to help you grow (if we have time to implement that part)
      */
 
-    public Market(CanvasWindow canvas) {
+    public Market(CanvasWindow canvas, List<Item> itemList) {
         super("Market", 750, 540); // this is where we place the market label on the main screen
-        itemTypes = new ArrayList<>();
         itemDisplays = new HashMap<>();
         itemButtons = new HashMap<>();
 
-        strawberries = new Item("Strawberry", 1.5, 20);
-        itemTypes.add(strawberries);
-
-        apples = new Item("Apple", 2, 15);
-        itemTypes.add(apples);
+        this.itemTypes = itemList;
 
         balance = 0;
         balanceDisplay = new GraphicsText("$" + balance, 740, 505); 
