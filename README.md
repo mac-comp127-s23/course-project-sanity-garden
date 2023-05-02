@@ -1,6 +1,6 @@
 # Sanity Garden
-#### Chris Lohmeier, Emma Nguyen and Lola Vescovo
-###### Section 2
+Chris Lohmeier, Emma Nguyen and Lola Vescovo
+Section 2
 
 ## Project Description 
 
