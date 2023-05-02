@@ -1,25 +1,18 @@
 
-import java.util.ArrayList;
-
 import edu.macalester.graphics.Image;
 
 public class Strawberry extends Plant{
 public int strawberryCount = 0;
-public Image strawberryBud;
 private static Item strawberryItem = new Item("Strawbery", 1.5, 20);
    
     /**
      * Extends the plant class specifically to a strawberry
      */
 
-    public Strawberry(double xCoor, double yCoor, Image strawberryBud) {
+    public Strawberry(double xCoor, double yCoor) {
 
         super(xCoor, yCoor, strawberryItem);
-
-
-        numberStages = 3;
-        plantImages = new ArrayList<>(numberStages);
-
+        item = strawberryItem;
 
         Image seed = new Image("strawseed.png");
         seed.setMaxWidth(seed.getImageWidth() * 0.08);

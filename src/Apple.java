@@ -1,6 +1,3 @@
-
-import java.util.ArrayList;
-
 import edu.macalester.graphics.Image;
 
 public class Apple extends Plant{
@@ -12,12 +9,9 @@ public class Apple extends Plant{
      * Extends the plant class specifically to an apple
      */
 
-    public Apple(double xCoor, double yCoor, Image testMushroom) {
+    public Apple(double xCoor, double yCoor) {
 
         super(xCoor, yCoor, appleItem);
-
-        numberStages = 3;
-        plantImages = new ArrayList<>(numberStages);
         
         Image flower = new Image("pixelAppleflower.png");
         flower.setMaxHeight(flower.getImageHeight() * 0.045);

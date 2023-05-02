@@ -22,8 +22,8 @@ public class StrawberryPatch extends Location {
 
         
         background = new Image(0, 0, "strawberrypatch.png");
-        strawberryLeft = new Strawberry(200, 300, new Image("strawberry.png"));
-        strawberryRight = new Strawberry(650, 300,new Image("strawberry.png"));
+        strawberryLeft = new Strawberry(200, 300);
+        strawberryRight = new Strawberry(650, 300);
 
         drawLocation();
         add(newDirtLabelLeft);

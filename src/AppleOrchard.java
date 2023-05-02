@@ -18,9 +18,9 @@ public class AppleOrchard extends Location {
 
         
             background = new Image(0, 0, "appleorchard.png");
-            appleLeft = new Apple(120, 180, new Image("apple.png"));
-            appleMiddle = new Apple(470, 330, new Image("apple.png"));
-            appleRight = new Apple(750, 190, new Image("apple.png"));
+            appleLeft = new Apple(120, 180);
+            appleMiddle = new Apple(470, 330);
+            appleRight = new Apple(750, 190);
     
             drawLocation();
             add(leftAppleTree);

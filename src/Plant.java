@@ -1,15 +1,15 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.macalester.graphics.Image;
 
 public abstract class Plant {
-    public int howMany = 0;
+    protected int howMany = 0;
     // Add an itemType for each Plant, intialize howMany to itemType
-    public Image currentPlantImage;
-    protected int growthStage = 0;
-    protected int numberStages = 0;
-    protected int currentStage = 0;
+    protected Image currentPlantImage;
+    protected int growthStage;
+    protected int numberStages;
     protected List<Image> plantImages;
     protected double xCoor;
     protected double yCoor;
@@ -22,12 +22,14 @@ public abstract class Plant {
 
     public Plant(double xCoor, double yCoor, Item item) {
 
-        currentPlantImage = new Image("testMushroom.png");
+        plantImages = new ArrayList<>();
         this.xCoor = xCoor;
         this.yCoor = yCoor;
 
         this.item = item;
         howMany = item.getItemCount();
+
+        growthStage = 0;
     }
 
     public Image getPlant() {
@@ -35,15 +37,16 @@ public abstract class Plant {
     }
 
     /**
-     * Updates the plant image based on what groth stage the plan is at
+     * Updates the plant image based on what growth stage the plan is at
      */
 
     public void grow() {
-        if (currentStage < numberStages - 1) {
+        if (growthStage < plantImages.size() - 1) {
             growthStage++;
             updatePlantImage();
         } else {
-            currentStage = 0;
+            growthStage = 0;
+            updatePlantImage();
             harvest();
         }
     }
@@ -53,7 +56,8 @@ public abstract class Plant {
      */
 
     public void harvest() {
-        item.setItemCount(howMany++);
+        howMany++;
+        item.setItemCount(howMany);
     }
 
     public void updatePlantImage() {
