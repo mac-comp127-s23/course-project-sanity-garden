@@ -1,4 +1,3 @@
-import Plants.Apple;
 import edu.macalester.graphics.*;
 
 public class AppleOrchard extends Location {

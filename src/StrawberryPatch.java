@@ -1,5 +1,4 @@
 
-import Plants.Strawberry;
 import edu.macalester.graphics.*;
 
 public class StrawberryPatch extends Location {
