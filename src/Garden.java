@@ -96,7 +96,7 @@ public class Garden {
     private void checkAdditionalItems() {
         for (Location location : itemLocations.keySet()) {
             if (location.getAdditionalItem()) {
-                updateItems(1, itemLocations.get(location)); // This might work better as a map?
+                updateItems(1, itemLocations.get(location));
                 location.setAdditionalItem(false);
             }
         }
