@@ -11,15 +11,19 @@ public abstract class Plant {
     protected int numberStages = 0;
     protected int currentStage = 0;
     protected List<Image> plantImages;
+    protected double xCoor;
+    protected double yCoor;
 
     /**
      * Creates an overall plant class with an image, each growth stage of the plant, the price
      * and keeps track of the current stage and how many of the plant are currently in your inventory.
      */
 
-    public Plant() {
+    public Plant(double xCoor, double yCoor) {
 
         currentPlantImage = new Image("testMushroom.png");
+        this.xCoor = xCoor;
+        this.yCoor = yCoor;
 
     }
 
@@ -51,6 +55,7 @@ public abstract class Plant {
 
     public void updatePlantImage() {
         currentPlantImage = plantImages.get(growthStage);
+        currentPlantImage.setPosition(xCoor, yCoor);
     }
 
     public int getHowMany() {
@@ -61,8 +66,6 @@ public abstract class Plant {
         howMany = newAmount;
     }
 
-    public void setPlantPosition(double x, double y) {
-        currentPlantImage.setPosition(x, y);
     }
-}
+
 

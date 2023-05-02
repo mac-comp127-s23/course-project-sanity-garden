@@ -11,16 +11,16 @@ public class Apple extends Plant{
      * Extends the plant class specifically to an apple
      */
 
-    public Apple(Image testMushroom) {
+    public Apple(double xCoor, double yCoor, Image testMushroom) {
 
-        super();
+        super(xCoor, yCoor);
 
         numberStages = 3;
         plantImages = new ArrayList<>(numberStages);
         
         Image flower = new Image("pixelAppleflower.png");
-        flower.setMaxHeight(flower.getImageHeight() * 0.07);
-        flower.setMaxWidth(flower.getImageWidth() * 0.07);
+        flower.setMaxHeight(flower.getImageHeight() * 0.045);
+        flower.setMaxWidth(flower.getImageWidth() * 0.045);
 
         Image tinyApple = new Image("tinyapple.png");
         tinyApple.setMaxWidth(flower.getImageWidth() * 0.2);

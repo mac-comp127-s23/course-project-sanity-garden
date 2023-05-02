@@ -11,9 +11,9 @@ public Image strawberryBud;
      * Extends the plant class specifically to a strawberry
      */
 
-    public Strawberry(Image strawberryBud) {
+    public Strawberry(double xCoor, double yCoor, Image strawberryBud) {
 
-        super();
+        super(xCoor, yCoor);
 
         numberStages = 3;
         plantImages = new ArrayList<>(numberStages);
