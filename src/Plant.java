@@ -5,8 +5,6 @@ import java.util.List;
 import edu.macalester.graphics.Image;
 
 public abstract class Plant {
-    protected int howMany = 0;
-    // Add an itemType for each Plant, intialize howMany to itemType
     protected Image currentPlantImage;
     protected int growthStage;
     protected int numberStages;
@@ -27,7 +25,6 @@ public abstract class Plant {
         this.yCoor = yCoor;
 
         this.item = item;
-        howMany = item.getItemCount();
 
         growthStage = 0;
     }
@@ -40,14 +37,15 @@ public abstract class Plant {
      * Updates the plant image based on what growth stage the plan is at
      */
 
-    public void grow() {
+    public boolean grow() {
         if (growthStage < plantImages.size() - 1) {
             growthStage++;
             updatePlantImage();
+            return false;
         } else {
             growthStage = 0;
             updatePlantImage();
-            harvest();
+            return true;
         }
     }
     
@@ -55,16 +53,11 @@ public abstract class Plant {
      * Adds a strawberry to your inventory each time you harvest it.
      */
 
-    public void harvest() {
-        howMany++;
-        item.setItemCount(howMany);
-    }
-
     public void updatePlantImage() {
         currentPlantImage = plantImages.get(growthStage);
         currentPlantImage.setCenter(xCoor, yCoor);
     }
 
-    }
+}
 
 

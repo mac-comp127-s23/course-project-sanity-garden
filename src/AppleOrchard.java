@@ -36,7 +36,9 @@ public class AppleOrchard extends Location {
             if (getElementAt(eventLeft.getPosition()) == leftAppleTree.getLabelBox()) {
                 appleLeft.updatePlantImage();
                 canvas.add(appleLeft.getPlant());
-                appleLeft.grow();
+                if(appleLeft.grow()) {
+                    additionalItem = true;
+                }
             }
 
         });
@@ -44,7 +46,9 @@ public class AppleOrchard extends Location {
                 if (getElementAt(eventRight.getPosition()) == middleAppleTree.getLabelBox()) {
                     appleMiddle.updatePlantImage();
                     canvas.add(appleMiddle.getPlant());
-                    appleMiddle.grow();
+                    if(appleMiddle.grow()) {
+                        additionalItem = true;
+                    }
                 }
         });
 
@@ -52,7 +56,9 @@ public class AppleOrchard extends Location {
             if (getElementAt(eventRight.getPosition()) == rightAppleTree.getLabelBox()) {
                 appleRight.updatePlantImage();
                 canvas.add(appleRight.getPlant());
-                appleRight.grow();
+                if(appleRight.grow()) {
+                    additionalItem = true;
+                }
             }
     });
 

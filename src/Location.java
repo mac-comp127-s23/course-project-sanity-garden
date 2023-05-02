@@ -4,6 +4,7 @@ abstract class Location extends GraphicsGroup {
     protected Label label;
     protected Label exitButton;
     protected Image background;
+    protected boolean additionalItem;
 
     /**
      * Creates an overall location class with an image and various labels
@@ -15,6 +16,7 @@ abstract class Location extends GraphicsGroup {
     public Location(String title, double x, double y) {
         label = new Label(title, x, y);
         exitButton = new Label("Go Back", 50, 50);
+        additionalItem = false;
     }
 
     public void drawLocation() {
@@ -32,6 +34,14 @@ abstract class Location extends GraphicsGroup {
 
     public Rectangle getLabelBox() {
         return label.getLabelBox();
+    }
+
+    public boolean getAdditionalItem() {
+        return additionalItem;
+    }
+
+    public void setAdditionalItem(boolean b) {
+        additionalItem = b;
     }
 
 }

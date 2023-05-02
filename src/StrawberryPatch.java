@@ -19,7 +19,6 @@ public class StrawberryPatch extends Location {
     
         newDirtLabelLeft = new Label("Click to Plant a Strawberry", 125, 300); //this is where we place dirtLeft
         newDirtLabelRight = new Label("Click to Plant a Strawberry", 575, 300); //this is where we place dirtRight
-
         
         background = new Image(0, 0, "strawberrypatch.png");
         strawberryLeft = new Strawberry(200, 300);
@@ -41,7 +40,9 @@ public class StrawberryPatch extends Location {
             if (getElementAt(eventLeft.getPosition()) == newDirtLabelLeft.getLabelBox()) {
                 strawberryLeft.updatePlantImage();
                 canvas.add(strawberryLeft.getPlant());
-                strawberryLeft.grow();
+                if(strawberryRight.grow()) {
+                    additionalItem = true;
+                }
             }
 
         });
@@ -49,12 +50,11 @@ public class StrawberryPatch extends Location {
                 if (getElementAt(eventRight.getPosition()) == newDirtLabelRight.getLabelBox()) {
                     strawberryRight.updatePlantImage();
                     canvas.add(strawberryRight.getPlant());
-                    strawberryRight.grow();
+                    if(strawberryRight.grow()) {
+                        additionalItem = true;
+                    }
                 }
         });
 
     }
-
-
-
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import edu.macalester.graphics.*;
 
@@ -14,6 +15,7 @@ public class Garden {
     private Item strawberries;
     private Item apples;
     private List<Item> itemList;
+    private HashMap<Location, Item> itemLocations;
 
     /**
      * Authors: Chris Lohmeier, Emma Nguyen and Lola Vescovo Comp 127 Final Project
@@ -27,6 +29,7 @@ public class Garden {
         canvas = new CanvasWindow("Sanity Garden", 900, 600); // Standard screen height for now
         world = new World();
 
+
         itemList = new ArrayList<>();
 
         strawberries = new Item("Strawberry", 1.5, 20);
@@ -35,13 +38,18 @@ public class Garden {
         apples = new Item("Apple", 2, 15);
         itemList.add(apples);
 
+
         straw = new StrawberryPatch(canvas);
         apple = new AppleOrchard(canvas);
         market = new Market(canvas, itemList);
         locations = new ArrayList<Location>();
         locations.add(market);
-        locations.add(straw);
         locations.add(apple);
+        locations.add(straw);
+
+        itemLocations = new HashMap<Location, Item>();
+        itemLocations.put(apple, apples);
+        itemLocations.put(straw, strawberries);
 
         labels = new GraphicsGroup();
         labels.add(straw.getLabel());
@@ -63,13 +71,13 @@ public class Garden {
     private void run() {
         canvas.draw();
         canvas.onClick(event -> {
+            checkAdditionalItems();
             for (Location location : locations) {
                 if (canvas.getElementAt(event.getPosition().getX(),
                     event.getPosition().getY()) == location.getLabelBox()) {
                     canvas.removeAll();
                     canvas.add(location);
                     checkExit(location);
-                    System.out.println(location.getLabelBox());
                 }
             }
         });
@@ -83,6 +91,20 @@ public class Garden {
                 drawWorld();
             }
         });
+    }
+
+    private void checkAdditionalItems() {
+        for (Location location : itemLocations.keySet()) {
+            if (location.getAdditionalItem()) {
+                updateItems(1, itemLocations.get(location)); // This might work better as a map?
+                location.setAdditionalItem(false);
+            }
+        }
+    }
+
+    private void updateItems(int newCount, Item item) {
+        item.setItemCount(item.getItemCount() + newCount);
+        market.updateItemTypes(itemList);
     }
 
     public static void main(String[] args) {
