@@ -19,6 +19,8 @@ public abstract class Plant {
 
     public Plant() {
 
+    updatePlantImage();
+
     }
 
     public Image getPlant() {
@@ -57,6 +59,10 @@ public abstract class Plant {
 
     public void setHowMany(int newAmount) {
         howMany = newAmount;
+    }
+
+    public void setPlantPosition(double x, double y) {
+        currentPlantImage.setPosition(x, y);
     }
 }
 

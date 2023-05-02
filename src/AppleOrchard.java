@@ -20,8 +20,11 @@ public class AppleOrchard extends Location {
         
             background = new Image(0, 0, "appleorchard.png");
             appleLeft = new Apple(new Image("apple.png"));
+            appleLeft.setPlantPosition(100, 100);
             appleMiddle = new Apple(new Image("apple.png"));
-            appleRight = new Apple(new Image("apple.png"));
+            appleMiddle.setPlantPosition(200, 200);
+            appleRight = new Apple( new Image("apple.png"));
+            appleRight.setPlantPosition(300, 300);
     
             drawLocation();
             add(leftAppleTree);
