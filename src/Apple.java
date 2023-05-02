@@ -1,4 +1,4 @@
-package Plants;
+
 import java.util.ArrayList;
 
 import edu.macalester.graphics.Image;
@@ -6,6 +6,7 @@ import edu.macalester.graphics.Image;
 public class Apple extends Plant{
     public int AppleCount = 0;
     public Image fullgrownapple;
+    private static Item appleItem = new Item("Apple", 2, 15);
    
     /**
      * Extends the plant class specifically to an apple
@@ -13,7 +14,7 @@ public class Apple extends Plant{
 
     public Apple(double xCoor, double yCoor, Image testMushroom) {
 
-        super(xCoor, yCoor);
+        super(xCoor, yCoor, appleItem);
 
         numberStages = 3;
         plantImages = new ArrayList<>(numberStages);
