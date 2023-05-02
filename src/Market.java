@@ -26,7 +26,7 @@ public class Market extends Location {
         itemDisplays = new HashMap<>();
         itemButtons = new HashMap<>();
 
-        strawberries = new Item("Strawbery", 1.5, 20);
+        strawberries = new Item("Strawberry", 1.5, 20);
         itemTypes.add(strawberries);
 
         apples = new Item("Apple", 2, 15);
@@ -40,7 +40,7 @@ public class Market extends Location {
 
         for (Item item : itemTypes) {
             itemButtons.put(item, new Button(item.getTitle() + ": " + item.getPrice()));
-            add(itemButtons.get(item), 425 + itemTypes.indexOf(item)*150, 125);
+            add(itemButtons.get(item), 300 + itemTypes.indexOf(item)*170, 125);
             GraphicsText display = new GraphicsText(" " + item.getItemCount(), 740, 530 + itemTypes.indexOf(item)*25);
             add(display);
             itemDisplays.put(item, display);
