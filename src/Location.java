@@ -14,9 +14,11 @@ abstract class Location extends GraphicsGroup {
      * To add an element, call add(*element you want to add*) AFTER drawLocation()
      */
 
-    public Location(double x, double y) {
-        labelButton = new Button(x, y);
-        exitButton = new Button("Go Back", 50, 50);
+    public Location(String title, double x, double y) {
+        labelButton = new Button(title);
+        labelButton.setPosition(x, y);
+        exitButton = new Button("Go Back");
+        exitButton.setPosition(50, 50);
         additionalItem = false;
     }
 
@@ -29,12 +31,8 @@ abstract class Location extends GraphicsGroup {
         return exitButton;
     }
 
-    public Button getLabel() {
+    public Button getLabelButton() {
         return labelButton;
-    }
-
-    public Rectangle getLabelButton() {
-        return label.getLabelBox();
     }
 
     public boolean getAdditionalItem() {

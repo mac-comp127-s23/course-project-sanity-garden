@@ -40,13 +40,6 @@ public class Garden {
         apples = new Item("Apple", 2, 15);
         itemList.add(apples);
 
-        exitButton = new Button("Go Back");
-    
-        exitButton.setPosition(130, 500);
-
-
-
-
         straw = new StrawberryPatch(canvas);
         apple = new AppleOrchard(canvas);
         market = new Market(canvas, itemList);
@@ -60,9 +53,9 @@ public class Garden {
         itemLocations.put(straw, strawberries);
 
         labels = new GraphicsGroup();
-        labels.add(straw.getLabel());
-        labels.add(market.getLabel());
-        labels.add(apple.getLabel());
+        labels.add(straw.getLabelButton());
+        labels.add(market.getLabelButton());
+        labels.add(apple.getLabelButton());
 
         drawWorld();
     }
@@ -82,7 +75,7 @@ public class Garden {
             checkAdditionalItems();
             for (Location location : locations) {
                 if (canvas.getElementAt(event.getPosition().getX(),
-                    event.getPosition().getY()) == location.getLabelBox()) {
+                    event.getPosition().getY()) == location.getLabelButton()) {
                     canvas.removeAll();
                     canvas.add(location);
                     checkExit(location);
@@ -97,7 +90,7 @@ public class Garden {
      */
 
     private void checkExit(Location location) {
-        exitButton.onClick(() -> {
+        location.getExitButton().onClick(() -> {
                 canvas.removeAll();
                 drawWorld();
             
