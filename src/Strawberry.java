@@ -21,11 +21,12 @@ private static Item strawberryItem = new Item("Strawbery", 1.5, 20);
         Image sprout = new Image("realsprout.png");
         sprout.setScale(0.1, 0.09);
 
-
+        Image strawberry = new Image("strawberry.png");
+        strawberry.setScale(3, 3);
 
         plantImages.add(seed);
         plantImages.add(sprout);
-        plantImages.add(new Image("strawberry.png"));
+        plantImages.add(strawberry);
         
  
     }

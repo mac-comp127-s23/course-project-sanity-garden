@@ -84,7 +84,8 @@ public class Garden {
     }
 
     /**
-     * creates a "go back" button for ecah location
+     * Allows the user to click on an exit box in the current location and update the canvas
+     * back to the world map
      */
 
     private void checkExit(Location location) {
@@ -98,7 +99,7 @@ public class Garden {
     }
 
     /**
-     * checks to see if there are new fruits
+     * checks to see if there are new fruits in each location that produces an item
      */
     private void checkAdditionalItems() {
         for (Location location : itemLocations.keySet()) {
