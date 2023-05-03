@@ -49,7 +49,6 @@ public abstract class Plant {
         }
     }
 
-
     public void updatePlantImage() {
         currentPlantImage = plantImages.get(growthStage);
         currentPlantImage.setCenter(xCoor, yCoor);
