@@ -5,6 +5,11 @@ public class Item {
     private String title;
     private double price;
 
+
+    /**
+     * Creates an overall item clas that keeps track of how many of each fruit the player has
+     */
+
     public Item(String title, double price, int itemCount) {
         this.price = price;
         this.title = title;

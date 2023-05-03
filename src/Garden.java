@@ -67,7 +67,7 @@ public class Garden {
     /**
      * creates the main world with the locations placed and click-able.
      */
-    
+
     private void run() {
         canvas.draw();
         canvas.onClick(event -> {
@@ -83,6 +83,10 @@ public class Garden {
         });
     }
 
+    /**
+     * creates a "go back" button for ecah location
+     */
+
     private void checkExit(Location location) {
         canvas.onClick(event -> {
             if (canvas.getElementAt(event.getPosition().getX(),
@@ -93,6 +97,9 @@ public class Garden {
         });
     }
 
+    /**
+     * checks to see if there are new fruits
+     */
     private void checkAdditionalItems() {
         for (Location location : itemLocations.keySet()) {
             if (location.getAdditionalItem()) {
@@ -101,6 +108,10 @@ public class Garden {
             }
         }
     }
+
+    /**
+     * updates the number of items (fruits) based on what the player has grown
+     */
 
     private void updateItems(int newCount, Item item) {
         item.setItemCount(item.getItemCount() + newCount);

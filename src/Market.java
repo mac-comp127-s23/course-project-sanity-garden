@@ -13,8 +13,8 @@ public class Market extends Location {
     private List<Item> itemTypes;
 
     /**
-     * Creates a market from location where you can sell your fruit for a profit and buy
-     * items to help you grow (if we have time to implement that part)
+     * Creates a market from location where you can sell your fruit for a profit and buy items to help
+     * you grow more plants
      */
 
     public Market(CanvasWindow canvas, List<Item> itemList) {
@@ -25,47 +25,47 @@ public class Market extends Location {
         this.itemTypes = itemList;
 
         balance = 0;
-        balanceDisplay = new GraphicsText("$" + balance, 740, 505); 
-    
+        balanceDisplay = new GraphicsText("$" + balance, 740, 505);
+
         background = new Image(0, 0, "market.png");
         drawLocation();
 
         for (Item item : itemTypes) {
             itemButtons.put(item, new Button(item.getTitle() + ": " + item.getPrice()));
-            add(itemButtons.get(item), 300 + itemTypes.indexOf(item)*170, 125);
-            GraphicsText display = new GraphicsText(" " + item.getItemCount(), 740, 530 + itemTypes.indexOf(item)*25);
+            add(itemButtons.get(item), 300 + itemTypes.indexOf(item) * 170, 125);
+            GraphicsText display = new GraphicsText(" " + item.getItemCount(), 740, 530 + itemTypes.indexOf(item) * 25);
             add(display);
             itemDisplays.put(item, display);
-            
+
         }
         add(balanceDisplay);
         sell(canvas);
     }
 
-   /**
-     * Takes a strawberry out of inventory when you click to sell
-     * but adds money to total profit
+    /**
+     * Takes an item out of inventory when you click to sell but adds money to total profit
      * 
-     * keeps count of berry inventory display, makes sure that if the button is clicked beyond the number of berries, the 
-     * balance and inventory don't change
+     * keeps count of item inventory display, makes sure that if the button is clicked beyond the number
+     * of items, the balance and inventory don't change
      */
 
     private void sell(CanvasWindow canvas) {
-        for (Item item : itemTypes) { 
+        for (Item item : itemTypes) {
             itemButtons.get(item).onClick(() -> {
                 int itemCount = item.getItemCount();
-                if (itemCount > 0){
+                if (itemCount > 0) {
                     item.setItemCount(itemCount = itemCount - 1);
                     balance = balance + item.getPrice();
                 }
-                if (itemCount <= 0){
+                if (itemCount <= 0) {
                     item.setItemCount(0);
                 }
                 updateDisplay(item);
             });
         }
     }
-    private void updateDisplay(Item item){
+
+    private void updateDisplay(Item item) {
         itemDisplays.get(item).setText(" " + item.getItemCount());
         balanceDisplay.setText("$" + balance);
     }
@@ -75,7 +75,7 @@ public class Market extends Location {
         for (Item item : itemTypes) {
             updateDisplay(item);
         }
-    } 
+    }
 
 }
 

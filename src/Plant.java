@@ -14,8 +14,8 @@ public abstract class Plant {
     protected Item item;
 
     /**
-     * Creates an overall plant class with an image, each growth stage of the plant, the price
-     * and keeps track of the current stage and how many of the plant are currently in your inventory.
+     * Creates an overall plant class with an image, each growth stage of the plant, the price and keeps
+     * track of the current stage and how many of the plant are currently in your inventory.
      */
 
     public Plant(double xCoor, double yCoor, Item item) {
@@ -34,7 +34,7 @@ public abstract class Plant {
     }
 
     /**
-     * Updates the plant image based on what growth stage the plan is at
+     * Updates the plant image based on what growth stage the plant is at
      */
 
     public boolean grow() {
@@ -48,10 +48,7 @@ public abstract class Plant {
             return true;
         }
     }
-    
-       /**
-     * Adds a strawberry to your inventory each time you harvest it.
-     */
+
 
     public void updatePlantImage() {
         currentPlantImage = plantImages.get(growthStage);
@@ -59,5 +56,4 @@ public abstract class Plant {
     }
 
 }
-
 

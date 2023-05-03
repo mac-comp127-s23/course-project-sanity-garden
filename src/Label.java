@@ -8,6 +8,11 @@ public class Label extends GraphicsGroup {
 
     private Rectangle labelBox;
 
+
+    /**
+     * Creates a label class to make an invisible box aroud the text to make it easier to click on
+     */
+
     public Label(String title, double x, double y) {
         super(x, y);
         GraphicsText labelText = new GraphicsText(title);
@@ -18,7 +23,8 @@ public class Label extends GraphicsGroup {
         add(labelText);
     }
 
-    // Since canvas.onClick doesn't work with a GraphicsGroup, this should be used for event handlers on labels
+    // Since canvas.onClick doesn't work with a GraphicsGroup, this should be used for event handlers on
+    // labels
     public Rectangle getLabelBox() {
         return labelBox;
     }
