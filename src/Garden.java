@@ -7,7 +7,7 @@ import edu.macalester.graphics.ui.Button;
 public class Garden {
 
     private CanvasWindow canvas;
-    private GraphicsGroup labels;
+    private GraphicsGroup buttons;
     private List<Location> locations;
     private StrawberryPatch straw;
     private AppleOrchard apple;
@@ -17,7 +17,6 @@ public class Garden {
     private Item apples;
     private List<Item> itemList;
     private HashMap<Location, Item> itemLocations;
-    private Button exitButton;
 ;
     /**
      * Authors: Chris Lohmeier, Emma Nguyen and Lola Vescovo Comp 127 Final Project
@@ -52,17 +51,17 @@ public class Garden {
         itemLocations.put(apple, apples);
         itemLocations.put(straw, strawberries);
 
-        labels = new GraphicsGroup();
-        labels.add(straw.getLabelButton());
-        labels.add(market.getLabelButton());
-        labels.add(apple.getLabelButton());
+        buttons = new GraphicsGroup();
+        buttons.add(straw.getLabelButton());
+        buttons.add(market.getLabelButton());
+        buttons.add(apple.getLabelButton());
 
         drawWorld();
     }
 
     private void drawWorld() {
         canvas.add(world.getWorldImage());
-        canvas.add(labels);
+        canvas.add(buttons);
     }
 
     /**
@@ -71,17 +70,13 @@ public class Garden {
 
     private void run() {
         canvas.draw();
-        canvas.onClick(event -> {
-            checkAdditionalItems();
-            for (Location location : locations) {
-                if (canvas.getElementAt(event.getPosition().getX(),
-                    event.getPosition().getY()) == location.getLabelButton()) {
-                    canvas.removeAll();
-                    canvas.add(location);
-                    checkExit(location);
-                }
-            }
-        });
+        for (Location location : locations) {
+            location.getLabelButton().onClick(() -> {
+                canvas.removeAll();
+                canvas.add(location);
+                checkExit(location);
+            });
+        }
     }
 
     /**
