@@ -21,8 +21,6 @@ public class StrawberryPatch extends Location {
 
         super("Strawberry Patch", 150, 400); // this is where we place the strawberry patch label on the main screen
 
-        // newDirtLabelLeft = new Label("Click to Plant a Strawberry", 125, 300); // this is where we place dirtLeft
-        // newDirtLabelRight = new Label("Click to Plant a Strawberry", 575, 300); // this is where we place dirtRight
         leftButton = new Button("Click here to plant a strawberry");
         rightButton = new Button("Click here to plant a strawberry");
 
