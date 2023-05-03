@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import edu.macalester.graphics.*;
+import edu.macalester.graphics.ui.Button;
 
 public class Garden {
 
@@ -16,7 +17,8 @@ public class Garden {
     private Item apples;
     private List<Item> itemList;
     private HashMap<Location, Item> itemLocations;
-
+    private Button exitButton;
+;
     /**
      * Authors: Chris Lohmeier, Emma Nguyen and Lola Vescovo Comp 127 Final Project
      */
@@ -37,6 +39,12 @@ public class Garden {
 
         apples = new Item("Apple", 2, 15);
         itemList.add(apples);
+
+        exitButton = new Button("Go Back");
+    
+        exitButton.setPosition(130, 500);
+
+
 
 
         straw = new StrawberryPatch(canvas);
@@ -89,12 +97,10 @@ public class Garden {
      */
 
     private void checkExit(Location location) {
-        canvas.onClick(event -> {
-            if (canvas.getElementAt(event.getPosition().getX(),
-                event.getPosition().getY()) == location.getExitBox()) {
+        exitButton.onClick(() -> {
                 canvas.removeAll();
                 drawWorld();
-            }
+            
         });
     }
 

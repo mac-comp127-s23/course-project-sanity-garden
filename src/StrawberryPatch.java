@@ -6,8 +6,6 @@ public class StrawberryPatch extends Location {
 
     private Strawberry strawberryLeft;
     private Strawberry strawberryRight;
-    // private Label newDirtLabelLeft;
-    // private Label newDirtLabelRight;
     private Button leftButton;
     private Button rightButton;
     
