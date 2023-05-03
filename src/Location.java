@@ -1,8 +1,9 @@
 import edu.macalester.graphics.*;
+import edu.macalester.graphics.ui.Button;
 abstract class Location extends GraphicsGroup {
 
-    protected Label label;
-    protected Label exitButton;
+    protected Button labelButton;
+    protected Button exitButton;
     protected Image background;
     protected boolean additionalItem;
 
@@ -13,9 +14,9 @@ abstract class Location extends GraphicsGroup {
      * To add an element, call add(*element you want to add*) AFTER drawLocation()
      */
 
-    public Location(String title, double x, double y) {
-        label = new Label(title, x, y);
-        exitButton = new Label("Go Back", 50, 50);
+    public Location(double x, double y) {
+        labelButton = new Button(x, y);
+        exitButton = new Button("Go Back", 50, 50);
         additionalItem = false;
     }
 
@@ -24,15 +25,15 @@ abstract class Location extends GraphicsGroup {
         add(exitButton);
     }
 
-    public Rectangle getExitBox() {
-        return exitButton.getLabelBox();
+    public Button getExitButton() {
+        return exitButton;
     }
 
-    public Label getLabel() {
-        return label;
+    public Button getLabel() {
+        return labelButton;
     }
 
-    public Rectangle getLabelBox() {
+    public Rectangle getLabelButton() {
         return label.getLabelBox();
     }
 
