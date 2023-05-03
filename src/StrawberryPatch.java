@@ -1,12 +1,16 @@
 
 import edu.macalester.graphics.*;
+import edu.macalester.graphics.ui.Button;
 
 public class StrawberryPatch extends Location {
 
     private Strawberry strawberryLeft;
     private Strawberry strawberryRight;
-    private Label newDirtLabelLeft;
-    private Label newDirtLabelRight;
+    // private Label newDirtLabelLeft;
+    // private Label newDirtLabelRight;
+    private Button leftButton;
+    private Button rightButton;
+    
 
     /**
      * Creates a strawberry patch from location where you can click to plant and grow strawberries and
@@ -17,16 +21,22 @@ public class StrawberryPatch extends Location {
 
         super("Strawberry Patch", 150, 400); // this is where we place the strawberry patch label on the main screen
 
-        newDirtLabelLeft = new Label("Click to Plant a Strawberry", 125, 300); // this is where we place dirtLeft
-        newDirtLabelRight = new Label("Click to Plant a Strawberry", 575, 300); // this is where we place dirtRight
+        // newDirtLabelLeft = new Label("Click to Plant a Strawberry", 125, 300); // this is where we place dirtLeft
+        // newDirtLabelRight = new Label("Click to Plant a Strawberry", 575, 300); // this is where we place dirtRight
+        leftButton = new Button("Click here to plant a strawberry");
+        rightButton = new Button("Click here to plant a strawberry");
+
+        leftButton.setPosition(130, 500);
+        rightButton.setPosition(580, 500);
+
 
         background = new Image(0, 0, "strawberrypatch.png");
         strawberryLeft = new Strawberry(200, 300);
         strawberryRight = new Strawberry(650, 300);
 
         drawLocation();
-        add(newDirtLabelLeft);
-        add(newDirtLabelRight);
+        add(leftButton);
+        add(rightButton);
 
         plantStrawberry(canvas);
     }
@@ -37,24 +47,20 @@ public class StrawberryPatch extends Location {
      */
 
     private void plantStrawberry(CanvasWindow canvas) {
-        canvas.onClick(eventLeft -> {
-            if (getElementAt(eventLeft.getPosition()) == newDirtLabelLeft.getLabelBox()) {
+        leftButton.onClick(() -> { //switching to button
                 strawberryLeft.updatePlantImage();
                 canvas.add(strawberryLeft.getPlant());
-                if (strawberryRight.grow()) {
+                if (strawberryLeft.grow()) {
                     additionalItem = true;
                 }
-            }
 
         });
-        canvas.onClick(eventRight -> {
-            if (getElementAt(eventRight.getPosition()) == newDirtLabelRight.getLabelBox()) {
-                strawberryRight.updatePlantImage();
-                canvas.add(strawberryRight.getPlant());
-                if (strawberryRight.grow()) {
-                    additionalItem = true;
-                }
-            }
+            rightButton.onClick(() -> { //switching to button
+                    strawberryRight.updatePlantImage();
+                    canvas.add(strawberryRight.getPlant());
+                    if (strawberryRight.grow()) {
+                        additionalItem = true;
+                    }
         });
 
     }
