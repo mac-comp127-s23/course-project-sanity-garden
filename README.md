@@ -23,7 +23,7 @@ To run the game, you will need to have Java 17 and Macalester Kilt Graphics as w
 
 ## Known issues
 
-You can only plant one plant per plot or tree, but can repeatedly harvest from them. 
+You can only plant one plant per plot or tree, but the image does not disappear when you harvest it, so the plants keep getting planted on top of one another when you try to plant another fruit after harvesting.
 
 ## Societal impact:
-There could be warning to people who are red-green color blind, as this game includes lots of green and red images that might hurt their eyes [is this what they want??]. Another societal impact of our game is it promotes capitalistic tendencies without the consequences of the inequalities that our buying and selling systems are built upon. 
+There could be a warning to people who are red-green color blind, as this game includes lots of green and red images that might be difficult to distinguish. Another societal impact of our game is it promotes capitalistic tendencies without the consequences of the inequalities that our buying and selling systems are built upon. 
