@@ -23,6 +23,8 @@ To run the game, you will need to have Java 17 and Macalester Kilt Graphics as w
 
 ## Known issues
 
+At this time we have no known issues with our current code.
+
 ## testMushroom.png
 
 For your convenience, we have kindly provided a test mushroom image that helped along the process (aka as we were cleaning up our code and deleting all unused images, we purposely did not delete testMushroom.png because of sentimental value. It was not an oversight).
