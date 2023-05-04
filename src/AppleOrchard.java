@@ -18,13 +18,13 @@ public class AppleOrchard extends Location {
 
         super("Apple Orchard", 640, 340); // this is where we place the apple orchard label on the main screen
 
-        leftAppleTree = new Button("click row an apple!");
-        middleAppleTree = new Button("click row an apple!");
-        rightAppleTree = new Button("click row an apple!");
+        leftAppleTree = new Button("click grow an apple!");
+        middleAppleTree = new Button("click grow an apple!");
+        rightAppleTree = new Button("click grow an apple!");
 
-        leftAppleTree.setPosition(70, 580);
-        middleAppleTree.setPosition(420, 580);
-        rightAppleTree.setPosition( 710, 580);
+        leftAppleTree.setPosition(50, 410);
+        middleAppleTree.setPosition(395, 550);
+        rightAppleTree.setPosition( 690, 425);
 
 
         background = new Image(0, 0, "appleorchard.png");

@@ -22,7 +22,7 @@ private static Item strawberryItem = new Item("Strawbery", 1.5, 20);
         sprout.setScale(0.1, 0.09);
 
         Image strawberry = new Image("strawberry.png");
-        strawberry.setScale(3, 3);
+        strawberry.setScale(2, 2);
 
         plantImages.add(seed);
         plantImages.add(sprout);
