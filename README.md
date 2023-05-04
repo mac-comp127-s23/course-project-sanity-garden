@@ -30,5 +30,5 @@ At this time we have no known issues with our current code. However, we did have
 For your convenience, we have kindly provided a test mushroom image that helped along the process (aka as we were cleaning up our code and deleting all unused images, we purposely did not delete testMushroom.png because of sentimental value. It was not an oversight).
 
 
-## Societal impact:
+## Societal impact
 There could be a warning to people who are red-green color blind, as this game includes lots of green and red images that might be difficult to distinguish. Another societal impact of our game is it promotes capitalistic tendencies without the consequences of the inequalities that our buying and selling systems are built upon. 
