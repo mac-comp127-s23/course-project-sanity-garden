@@ -23,7 +23,7 @@ To run the game, you will need to have Java 17 and Macalester Kilt Graphics as w
 
 ## Known issues
 
-At this time we have no known issues with our current code.
+At this time we have no known issues with our current code. However, we did have ideas that we did not have time to implement. For example, you can sell fruit, but not buy anything with your money. We also could add more fruits to grow and make the growth timed so that you don't have to click for each stage, it just automatically updates after a certain amount of time.
 
 ## testMushroom.png
 
