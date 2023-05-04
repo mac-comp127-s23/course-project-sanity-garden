@@ -56,9 +56,11 @@ public class StrawberryPatch extends Location {
                     canvas.add(strawberryRight.getPlant());
                     if (strawberryRight.grow()) {
                         additionalItem = true;
-                        canvas.remove(strawberryRight.getPlant());
+                        for (Image image : strawberryRight.getPlantImages()) {
+                        canvas.pause(20);
+                        canvas.remove(image);
+                        }
                     }
         });
-
     }
 }

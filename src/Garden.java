@@ -69,7 +69,9 @@ public class Garden {
      */
 
     private void run() {
-        canvas.draw();
+        canvas.animate(() -> {
+            checkAdditionalItems();
+        });
         for (Location location : locations) {
             location.getLabelButton().onClick(() -> {
                 canvas.removeAll();

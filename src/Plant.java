@@ -54,5 +54,9 @@ public abstract class Plant {
         currentPlantImage.setCenter(xCoor, yCoor);
     }
 
+    public List<Image> getPlantImages() {
+        return plantImages;
+    }
+
 }
 
