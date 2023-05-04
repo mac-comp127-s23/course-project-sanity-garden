@@ -58,5 +58,13 @@ public abstract class Plant {
         return plantImages;
     }
 
+    public int getGrowthStage() {
+        return growthStage;
+    }
+
+    public void setGrowthStage(int stage) {
+        growthStage = stage;
+    }
+
 }
 

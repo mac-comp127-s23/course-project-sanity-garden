@@ -90,6 +90,7 @@ public class Garden {
         location.getExitButton().onClick(() -> {
                 canvas.removeAll();
                 drawWorld();
+                location.resetGrowthStage();
             
         });
     }

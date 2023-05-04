@@ -71,5 +71,11 @@ public class AppleOrchard extends Location {
 
     }
 
+    public void resetGrowthStage() {
+        appleLeft.setGrowthStage(0);
+        appleMiddle.setGrowthStage(0);
+        appleRight.setGrowthStage(0);
+    }
+
 }
 

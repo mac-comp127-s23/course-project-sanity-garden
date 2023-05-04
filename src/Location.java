@@ -43,4 +43,6 @@ abstract class Location extends GraphicsGroup {
         additionalItem = b;
     }
 
+    abstract void resetGrowthStage();
+
 }

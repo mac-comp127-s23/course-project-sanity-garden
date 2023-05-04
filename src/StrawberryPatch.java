@@ -48,19 +48,31 @@ public class StrawberryPatch extends Location {
                 canvas.add(strawberryLeft.getPlant());
                 if (strawberryLeft.grow()) {
                     additionalItem = true;
+                    for (Image image : strawberryLeft.getPlantImages()) {
+                        canvas.pause(20);
+                        canvas.remove(image);
+                    }
                 }
 
         });
             rightButton.onClick(() -> { //switching to button
-                    strawberryRight.updatePlantImage();
-                    canvas.add(strawberryRight.getPlant());
-                    if (strawberryRight.grow()) {
-                        additionalItem = true;
-                        for (Image image : strawberryRight.getPlantImages()) {
+                strawberryRight.updatePlantImage();
+                canvas.add(strawberryRight.getPlant());
+                if (strawberryRight.grow()) {
+                    additionalItem = true;
+                    canvas.pause(20);
+                    for (Image image : strawberryRight.getPlantImages()) {
                         canvas.pause(20);
                         canvas.remove(image);
-                        }
                     }
+                }
         });
     }
+    
+    public void resetGrowthStage() {
+        strawberryLeft.setGrowthStage(0);
+        strawberryRight.setGrowthStage(0);
+    }
+    
+    
 }

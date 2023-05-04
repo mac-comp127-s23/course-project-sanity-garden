@@ -77,5 +77,9 @@ public class Market extends Location {
         }
     }
 
+    public void resetGrowthStage() {
+        
+    }
+
 }
 
