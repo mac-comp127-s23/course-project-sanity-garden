@@ -18,9 +18,9 @@ public class AppleOrchard extends Location {
 
         super("Apple Orchard", 640, 340); // this is where we place the apple orchard label on the main screen
 
-        leftAppleTree = new Button("click grow an apple!");
-        middleAppleTree = new Button("click grow an apple!");
-        rightAppleTree = new Button("click grow an apple!");
+        leftAppleTree = new Button("click to grow an apple!");
+        middleAppleTree = new Button("click to grow an apple!");
+        rightAppleTree = new Button("click to grow an apple!");
 
         leftAppleTree.setPosition(50, 410);
         middleAppleTree.setPosition(395, 550);
@@ -51,6 +51,10 @@ public class AppleOrchard extends Location {
                 canvas.add(appleLeft.getPlant());
                 if (appleLeft.grow()) {
                     additionalItem = true;
+                    for (Image image : appleLeft.getPlantImages()) {
+                        canvas.pause(20);
+                        canvas.remove(image);
+                    }
                 }
         });
         middleAppleTree.onClick(() -> {
@@ -58,6 +62,10 @@ public class AppleOrchard extends Location {
                 canvas.add(appleMiddle.getPlant());
                 if (appleMiddle.grow()) {
                     additionalItem = true;
+                    for (Image image : appleMiddle.getPlantImages()) {
+                        canvas.pause(20);
+                        canvas.remove(image);
+                    }
                 }
         });
 
@@ -66,10 +74,16 @@ public class AppleOrchard extends Location {
                 canvas.add(appleRight.getPlant());
                 if (appleRight.grow()) {
                     additionalItem = true;
+                    for (Image image : appleRight.getPlantImages()) {
+                        canvas.pause(20);
+                        canvas.remove(image);
+                    }
                 }
         });
 
     }
+
+    
 
     public void resetGrowthStage() {
         appleLeft.setGrowthStage(0);

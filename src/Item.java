@@ -1,10 +1,7 @@
-
 public class Item {
-
     private int itemCount;
     private String title;
     private double price;
-
 
     /**
      * Creates an overall item clas that keeps track of how many of each fruit the player has

@@ -1,18 +1,13 @@
-
 import edu.macalester.graphics.Image;
 
 public class Strawberry extends Plant{
-public int strawberryCount = 0;
-private static Item strawberryItem = new Item("Strawbery", 1.5, 20);
    
     /**
      * Extends the plant class specifically to a strawberry
      */
-
     public Strawberry(double xCoor, double yCoor) {
 
-        super(xCoor, yCoor, strawberryItem);
-        item = strawberryItem;
+        super(xCoor, yCoor);
 
         Image seed = new Image("strawseed.png");
         seed.setMaxWidth(seed.getImageWidth() * 0.08);
@@ -24,13 +19,13 @@ private static Item strawberryItem = new Item("Strawbery", 1.5, 20);
         Image strawberry = new Image("strawberry.png");
         strawberry.setScale(2, 2);
 
+        Image transparent = new Image("transparentsq.png");
+
         plantImages.add(seed);
         plantImages.add(sprout);
         plantImages.add(strawberry);
-        
- 
+        plantImages.add(transparent);
     }
-       
 }
 
 

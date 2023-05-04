@@ -8,7 +8,6 @@ public class StrawberryPatch extends Location {
     private Strawberry strawberryRight;
     private Button leftButton;
     private Button rightButton;
-    
 
     /**
      * Creates a strawberry patch from location where you can click to plant and grow strawberries and
@@ -73,6 +72,4 @@ public class StrawberryPatch extends Location {
         strawberryLeft.setGrowthStage(0);
         strawberryRight.setGrowthStage(0);
     }
-    
-    
 }

@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import edu.macalester.graphics.*;
-import edu.macalester.graphics.ui.Button;
 
 public class Garden {
 
@@ -33,10 +32,10 @@ public class Garden {
 
         itemList = new ArrayList<>();
 
-        strawberries = new Item("Strawberry", 1.5, 20);
+        strawberries = new Item("Strawberry", 1.5, 0);
         itemList.add(strawberries);
 
-        apples = new Item("Apple", 2, 15);
+        apples = new Item("Apple", 2, 0);
         itemList.add(apples);
 
         straw = new StrawberryPatch(canvas);
