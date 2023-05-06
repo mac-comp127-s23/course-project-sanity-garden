@@ -31,7 +31,7 @@ public class Market extends Location {
         drawLocation();
 
         for (Item item : itemTypes) {
-            itemButtons.put(item, new Button(item.getTitle() + ": " + item.getPrice()));
+            itemButtons.put(item, new Button(item.getTitle() + ": $" + item.getPrice()));
             add(itemButtons.get(item), 300 + itemTypes.indexOf(item) * 170, 125);
             GraphicsText display = new GraphicsText(" " + item.getItemCount(), 740, 530 + itemTypes.indexOf(item) * 25);
             add(display);

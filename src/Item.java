@@ -5,6 +5,9 @@ public class Item {
 
     /**
      * Creates an overall item clas that keeps track of how many of each fruit the player has
+     * @params title      name of item used for Market display
+     * @params price      price of fruit in Market
+     * @params itemCount  number of items updated by certain locations, used by Market class
      */
 
     public Item(String title, double price, int itemCount) {
