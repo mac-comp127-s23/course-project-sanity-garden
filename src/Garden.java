@@ -19,6 +19,7 @@ public class Garden {
 ;
     /**
      * Authors: Chris Lohmeier, Emma Nguyen and Lola Vescovo Comp 127 Final Project
+     * Acknwoledgements: Abby Marsh, Nicole Branch, Nurain Jiwani and Timothy Lang
      */
 
     /**
